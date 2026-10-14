@@ -1,0 +1,709 @@
+ticket_id,order_id,created_at,subject,status,description
+T000227,P001150,2025-07-02,atraso na entrega,aberto,Contato sobre o pedido P001150: atraso na entrega.
+T000214,P001071,2025-07-03,atraso na entrega,resolvido,Cliente relata que o pedido P001071 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000218,P001096,2025-07-03,atraso na entrega,aberto,Cliente relata que o pedido P001096 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000705,,2025-07-03,duvida geral,resolvido,Contato sem pedido identificado.
+T000708,,2025-07-03,duvida geral,resolvido,Contato sem pedido identificado.
+T000013,P000066,2025-07-04,atraso na entrega,aberto,Cliente relata que o pedido P000066 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000042,P000198,2025-07-04,pedido de cancelamento,resolvido,Contato sobre o pedido P000198: pedido de cancelamento.
+T000194,P000974,2025-07-04,atraso na entrega,resolvido,Cliente relata que o pedido P000974 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000219,P001098,2025-07-04,atraso na entrega,escalado,Cliente relata que o pedido P001098 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000047,P000227,2025-07-05,atraso na entrega,resolvido,Cliente relata que o pedido P000227 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000058,P000302,2025-07-05,atraso na entrega,resolvido,Cliente relata que o pedido P000302 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000092,P000470,2025-07-05,atraso na entrega,aberto,Cliente relata que o pedido P000470 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000130,P000684,2025-07-05,atraso na entrega,aberto,Cliente relata que o pedido P000684 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000178,P000916,2025-07-05,atraso na entrega,resolvido,Cliente relata que o pedido P000916 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000240,P001218,2025-07-05,duvida sobre prazo,resolvido,Contato sobre o pedido P001218: duvida sobre prazo.
+T000028,P000142,2025-07-06,atraso na entrega,aberto,Cliente relata que o pedido P000142 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000068,P000386,2025-07-06,duvida sobre prazo,escalado,Contato sobre o pedido P000386: duvida sobre prazo.
+T000093,P000485,2025-07-06,troca,aberto,Contato sobre o pedido P000485: troca.
+T000109,P000590,2025-07-06,atraso na entrega,escalado,Cliente relata que o pedido P000590 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000112,P000607,2025-07-06,atraso na entrega,escalado,Contato sobre o pedido P000607: atraso na entrega.
+T000180,P000926,2025-07-06,atraso na entrega,aberto,Cliente relata que o pedido P000926 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000205,P001030,2025-07-06,produto com defeito,resolvido,Contato sobre o pedido P001030: produto com defeito.
+T000228,P001164,2025-07-06,reembolso,escalado,Contato sobre o pedido P001164: reembolso.
+T000704,,2025-07-06,duvida geral,resolvido,Contato sem pedido identificado.
+T000032,P000150,2025-07-07,atraso na entrega,resolvido,Cliente relata que o pedido P000150 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000131,P000687,2025-07-07,atraso na entrega,aberto,Cliente relata que o pedido P000687 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000224,P001124,2025-07-07,atraso na entrega,aberto,Cliente relata que o pedido P001124 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000688,,2025-07-07,duvida geral,resolvido,Contato sem pedido identificado.
+T000066,P000376,2025-07-08,atraso na entrega,aberto,Cliente relata que o pedido P000376 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000161,P000833,2025-07-08,atraso na entrega,resolvido,Cliente relata que o pedido P000833 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000043,P000204,2025-07-09,troca,aberto,Contato sobre o pedido P000204: troca.
+T000056,P000286,2025-07-09,atraso na entrega,escalado,Cliente relata que o pedido P000286 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000155,P000812,2025-07-09,atraso na entrega,resolvido,Cliente relata que o pedido P000812 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000168,P000873,2025-07-09,atraso na entrega,aberto,Cliente relata que o pedido P000873 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000183,P000938,2025-07-09,produto com defeito,resolvido,Contato sobre o pedido P000938: produto com defeito.
+T000209,P001042,2025-07-09,atraso na entrega,aberto,Cliente relata que o pedido P001042 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000221,P001105,2025-07-09,atraso na entrega,resolvido,Cliente relata que o pedido P001105 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000235,P001199,2025-07-09,produto com defeito,resolvido,Contato sobre o pedido P001199: produto com defeito.
+T000001,P000011,2025-07-10,produto com defeito,aberto,Contato sobre o pedido P000011: produto com defeito.
+T000022,P000107,2025-07-10,atraso na entrega,resolvido,Cliente relata que o pedido P000107 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000034,P000159,2025-07-10,troca,resolvido,Contato sobre o pedido P000159: troca.
+T000125,P000664,2025-07-10,atraso na entrega,aberto,Cliente relata que o pedido P000664 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000128,P000680,2025-07-10,atraso na entrega,resolvido,Cliente relata que o pedido P000680 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000136,P000706,2025-07-10,atraso na entrega,aberto,Cliente relata que o pedido P000706 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000137,P000714,2025-07-10,atraso na entrega,escalado,Cliente relata que o pedido P000714 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000151,P000787,2025-07-10,atraso na entrega,resolvido,Cliente relata que o pedido P000787 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000153,P000798,2025-07-10,atraso na entrega,resolvido,Cliente relata que o pedido P000798 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000201,P001006,2025-07-10,atraso na entrega,resolvido,Cliente relata que o pedido P001006 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000003,P000016,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P000016 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000008,P000057,2025-07-11,atraso na entrega,resolvido,Contato sobre o pedido P000057: atraso na entrega.
+T000073,P000398,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P000398 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000101,P000538,2025-07-11,atraso na entrega,escalado,Cliente relata que o pedido P000538 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000123,P000662,2025-07-11,reembolso,resolvido,Contato sobre o pedido P000662: reembolso.
+T000167,P000869,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P000869 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000179,P000922,2025-07-11,troca,resolvido,Contato sobre o pedido P000922: troca.
+T000187,P000958,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P000958 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000192,P000972,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P000972 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000210,P001048,2025-07-11,atraso na entrega,resolvido,Cliente relata que o pedido P001048 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000233,P001184,2025-07-11,atraso na entrega,escalado,Cliente relata que o pedido P001184 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000067,P000384,2025-07-12,atraso na entrega,escalado,Cliente relata que o pedido P000384 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000074,P000404,2025-07-12,atraso na entrega,resolvido,Cliente relata que o pedido P000404 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000106,P000550,2025-07-12,atraso na entrega,resolvido,Cliente relata que o pedido P000550 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000127,P000676,2025-07-12,pedido de cancelamento,resolvido,Contato sobre o pedido P000676: pedido de cancelamento.
+T000141,P000725,2025-07-12,atraso na entrega,resolvido,Cliente relata que o pedido P000725 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000171,P000888,2025-07-12,atraso na entrega,resolvido,Cliente relata que o pedido P000888 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000176,P000909,2025-07-12,reembolso,resolvido,Contato sobre o pedido P000909: reembolso.
+T000024,P000119,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000119 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000033,P000152,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000152 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000041,P000196,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000196 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000046,P000225,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000225 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000051,P000261,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000261 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000064,P000358,2025-07-13,duvida sobre prazo,resolvido,Contato sobre o pedido P000358: duvida sobre prazo.
+T000083,P000442,2025-07-13,troca,resolvido,Contato sobre o pedido P000442: troca.
+T000113,P000608,2025-07-13,atraso na entrega,aberto,Cliente relata que o pedido P000608 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000135,P000705,2025-07-13,troca,aberto,Contato sobre o pedido P000705: troca.
+T000158,P000826,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P000826 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000165,P000863,2025-07-13,produto com defeito,resolvido,Contato sobre o pedido P000863: produto com defeito.
+T000199,P001002,2025-07-13,troca,resolvido,Contato sobre o pedido P001002: troca.
+T000206,P001031,2025-07-13,atraso na entrega,resolvido,Cliente relata que o pedido P001031 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000222,P001106,2025-07-13,produto com defeito,resolvido,Contato sobre o pedido P001106: produto com defeito.
+T000010,P000061,2025-07-14,atraso na entrega,aberto,Cliente relata que o pedido P000061 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000057,P000299,2025-07-14,atraso na entrega,aberto,Cliente relata que o pedido P000299 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000059,P000309,2025-07-14,atraso na entrega,resolvido,Cliente relata que o pedido P000309 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000060,P000315,2025-07-14,atraso na entrega,resolvido,Cliente relata que o pedido P000315 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000084,P000445,2025-07-14,atraso na entrega,resolvido,Cliente relata que o pedido P000445 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000107,P000561,2025-07-14,atraso na entrega,aberto,Cliente relata que o pedido P000561 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000139,P000721,2025-07-14,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P000721.
+T000215,P001073,2025-07-14,atraso na entrega,aberto,Cliente relata que o pedido P001073 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000692,,2025-07-14,duvida geral,resolvido,Contato sem pedido identificado.
+T000695,,2025-07-14,duvida geral,resolvido,Contato sem pedido identificado.
+T000699,,2025-07-14,duvida geral,resolvido,Contato sem pedido identificado.
+T000005,P000042,2025-07-15,atraso na entrega,aberto,Cliente relata que o pedido P000042 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000006,P000045,2025-07-15,atraso na entrega,resolvido,Cliente relata que o pedido P000045 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000036,P000174,2025-07-15,atraso na entrega,resolvido,Cliente relata que o pedido P000174 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000054,P000274,2025-07-15,atraso na entrega,aberto,Cliente relata que o pedido P000274 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000070,P000391,2025-07-15,atraso na entrega,resolvido,Cliente relata que o pedido P000391 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000098,P000517,2025-07-15,atraso na entrega,aberto,Cliente relata que o pedido P000517 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000149,P000771,2025-07-15,troca,resolvido,Contato sobre o pedido P000771: troca.
+T000030,P000145,2025-07-16,atraso na entrega,resolvido,Cliente relata que o pedido P000145 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000063,P000333,2025-07-16,troca,escalado,Contato sobre o pedido P000333: troca.
+T000114,P000616,2025-07-16,atraso na entrega,aberto,Cliente relata que o pedido P000616 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000172,P000896,2025-07-16,atraso na entrega,resolvido,Cliente relata que o pedido P000896 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000197,P001000,2025-07-16,atraso na entrega,aberto,Cliente relata que o pedido P001000 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000011,P000062,2025-07-17,atraso na entrega,aberto,Cliente relata que o pedido P000062 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000015,P000074,2025-07-17,atraso na entrega,resolvido,Cliente relata que o pedido P000074 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000072,P000393,2025-07-17,atraso na entrega,resolvido,Cliente relata que o pedido P000393 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000105,P000547,2025-07-17,produto com defeito,resolvido,Contato sobre o pedido P000547: produto com defeito.
+T000121,P000655,2025-07-17,atraso na entrega,resolvido,Cliente relata que o pedido P000655 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000162,P000849,2025-07-17,atraso na entrega,aberto,Cliente relata que o pedido P000849 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000207,P001035,2025-07-17,atraso na entrega,aberto,Cliente relata que o pedido P001035 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000211,P001059,2025-07-17,atraso na entrega,resolvido,Cliente relata que o pedido P001059 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000220,P001104,2025-07-17,atraso na entrega,aberto,Cliente relata que o pedido P001104 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000231,P001181,2025-07-17,atraso na entrega,resolvido,Cliente relata que o pedido P001181 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000002,P000013,2025-07-18,atraso na entrega,aberto,Cliente relata que o pedido P000013 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000020,P000093,2025-07-18,atraso na entrega,resolvido,Cliente relata que o pedido P000093 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000029,P000143,2025-07-18,duvida sobre prazo,aberto,Contato sobre o pedido P000143: duvida sobre prazo.
+T000031,P000147,2025-07-18,produto com defeito,aberto,Contato sobre o pedido P000147: produto com defeito.
+T000048,P000231,2025-07-18,atraso na entrega,resolvido,Cliente relata que o pedido P000231 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000050,P000243,2025-07-18,atraso na entrega,aberto,Cliente relata que o pedido P000243 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000078,P000425,2025-07-18,atraso na entrega,resolvido,Cliente relata que o pedido P000425 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000144,P000746,2025-07-18,atraso na entrega,aberto,Cliente relata que o pedido P000746 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000147,P000759,2025-07-18,atraso na entrega,resolvido,Cliente relata que o pedido P000759 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000160,P000828,2025-07-18,reembolso,aberto,Contato sobre o pedido P000828: reembolso.
+T000177,P000914,2025-07-18,atraso na entrega,resolvido,Cliente relata que o pedido P000914 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000188,P000963,2025-07-18,produto com defeito,resolvido,Contato sobre o pedido P000963: produto com defeito.
+T000217,P001081,2025-07-18,produto com defeito,aberto,Contato sobre o pedido P001081: produto com defeito.
+T000025,P000124,2025-07-19,atraso na entrega,aberto,Cliente relata que o pedido P000124 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000097,P000516,2025-07-19,atraso na entrega,resolvido,Contato sobre o pedido P000516: atraso na entrega.
+T000119,P000650,2025-07-19,atraso na entrega,aberto,Cliente relata que o pedido P000650 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000182,P000937,2025-07-19,atraso na entrega,resolvido,Cliente relata que o pedido P000937 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000202,P001018,2025-07-19,atraso na entrega,resolvido,Cliente relata que o pedido P001018 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000212,P001062,2025-07-19,troca,aberto,Contato sobre o pedido P001062: troca.
+T000703,,2025-07-19,duvida geral,resolvido,Contato sem pedido identificado.
+T000004,P000032,2025-07-20,atraso na entrega,resolvido,Cliente relata que o pedido P000032 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000016,P000077,2025-07-20,duvida sobre prazo,escalado,Contato sobre o pedido P000077: duvida sobre prazo.
+T000086,P000449,2025-07-20,duvida sobre prazo,resolvido,Contato sobre o pedido P000449: duvida sobre prazo.
+T000104,P000545,2025-07-20,atraso na entrega,resolvido,Cliente relata que o pedido P000545 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000145,P000755,2025-07-20,troca,resolvido,Contato sobre o pedido P000755: troca.
+T000146,P000756,2025-07-20,atraso na entrega,resolvido,Cliente relata que o pedido P000756 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000163,P000858,2025-07-20,atraso na entrega,resolvido,Cliente relata que o pedido P000858 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000190,P000967,2025-07-20,atraso na entrega,escalado,Cliente relata que o pedido P000967 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000049,P000236,2025-07-21,atraso na entrega,aberto,Cliente relata que o pedido P000236 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000062,P000320,2025-07-21,atraso na entrega,resolvido,Cliente relata que o pedido P000320 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000110,P000597,2025-07-21,atraso na entrega,aberto,Cliente relata que o pedido P000597 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000164,P000862,2025-07-21,atraso na entrega,resolvido,Cliente relata que o pedido P000862 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000191,P000968,2025-07-21,atraso na entrega,aberto,Cliente relata que o pedido P000968 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000216,P001075,2025-07-21,atraso na entrega,aberto,Cliente relata que o pedido P001075 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000027,P000134,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000134 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000037,P000177,2025-07-22,duvida sobre prazo,resolvido,Contato sobre o pedido P000177: duvida sobre prazo.
+T000039,P000185,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000185 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000040,P000187,2025-07-22,duvida sobre prazo,resolvido,Contato sobre o pedido P000187: duvida sobre prazo.
+T000053,P000272,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000272 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000075,P000408,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000408 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000082,P000440,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000440 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000099,P000518,2025-07-22,atraso na entrega,escalado,Cliente relata que o pedido P000518 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000111,P000601,2025-07-22,pedido de cancelamento,escalado,Contato sobre o pedido P000601: pedido de cancelamento.
+T000186,P000954,2025-07-22,atraso na entrega,resolvido,Cliente relata que o pedido P000954 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000238,P001214,2025-07-22,atraso na entrega,aberto,Cliente relata que o pedido P001214 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000007,P000056,2025-07-23,atraso na entrega,resolvido,Cliente relata que o pedido P000056 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000021,P000104,2025-07-23,atraso na entrega,resolvido,Cliente relata que o pedido P000104 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000065,P000371,2025-07-23,atraso na entrega,aberto,Contato sobre o pedido P000371: atraso na entrega.
+T000069,P000390,2025-07-23,troca,escalado,Contato sobre o pedido P000390: troca.
+T000095,P000511,2025-07-23,atraso na entrega,resolvido,Cliente relata que o pedido P000511 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000138,P000717,2025-07-23,atraso na entrega,resolvido,Cliente relata que o pedido P000717 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000237,P001209,2025-07-23,atraso na entrega,resolvido,Cliente relata que o pedido P001209 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000009,P000058,2025-07-24,atraso na entrega,resolvido,Cliente relata que o pedido P000058 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000081,P000431,2025-07-24,pedido de cancelamento,aberto,Contato sobre o pedido P000431: pedido de cancelamento.
+T000087,P000451,2025-07-24,atraso na entrega,resolvido,Cliente relata que o pedido P000451 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000088,P000453,2025-07-24,produto com defeito,aberto,Contato sobre o pedido P000453: produto com defeito.
+T000126,P000670,2025-07-24,atraso na entrega,resolvido,Cliente relata que o pedido P000670 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000174,P000900,2025-07-24,troca,resolvido,Contato sobre o pedido P000900: troca.
+T000184,P000949,2025-07-24,atraso na entrega,resolvido,Cliente relata que o pedido P000949 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000200,P001004,2025-07-24,troca,aberto,Contato sobre o pedido P001004: troca.
+T000204,P001023,2025-07-24,atraso na entrega,aberto,Cliente relata que o pedido P001023 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000241,P001221,2025-07-24,atraso na entrega,resolvido,Contato sobre o pedido P001221: atraso na entrega.
+T000038,P000181,2025-07-25,pedido de cancelamento,aberto,Contato sobre o pedido P000181: pedido de cancelamento.
+T000091,P000467,2025-07-25,atraso na entrega,aberto,Cliente relata que o pedido P000467 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000148,P000769,2025-07-25,atraso na entrega,resolvido,Cliente relata que o pedido P000769 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000185,P000950,2025-07-25,atraso na entrega,resolvido,Cliente relata que o pedido P000950 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000229,P001169,2025-07-25,pedido de cancelamento,resolvido,Contato sobre o pedido P001169: pedido de cancelamento.
+T000236,P001204,2025-07-25,atraso na entrega,resolvido,Cliente relata que o pedido P001204 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000012,P000065,2025-07-26,atraso na entrega,resolvido,Cliente relata que o pedido P000065 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000045,P000217,2025-07-26,atraso na entrega,resolvido,Cliente relata que o pedido P000217 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000108,P000571,2025-07-26,atraso na entrega,resolvido,Cliente relata que o pedido P000571 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000115,P000620,2025-07-26,troca,resolvido,Contato sobre o pedido P000620: troca.
+T000120,P000653,2025-07-26,reembolso,resolvido,Contato sobre o pedido P000653: reembolso.
+T000143,P000743,2025-07-26,atraso na entrega,resolvido,Cliente relata que o pedido P000743 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000156,P000813,2025-07-26,atraso na entrega,aberto,Cliente relata que o pedido P000813 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000181,P000927,2025-07-26,atraso na entrega,resolvido,Cliente relata que o pedido P000927 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000189,P000964,2025-07-26,atraso na entrega,aberto,Cliente relata que o pedido P000964 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000196,P000989,2025-07-26,atraso na entrega,aberto,Cliente relata que o pedido P000989 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000103,P000543,2025-07-27,atraso na entrega,escalado,Contato sobre o pedido P000543: atraso na entrega.
+T000132,P000696,2025-07-27,atraso na entrega,resolvido,Cliente relata que o pedido P000696 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000232,P001183,2025-07-27,atraso na entrega,resolvido,Cliente relata que o pedido P001183 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000026,P000125,2025-07-28,atraso na entrega,aberto,Cliente relata que o pedido P000125 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000089,P000462,2025-07-28,atraso na entrega,aberto,Cliente relata que o pedido P000462 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000100,P000530,2025-07-28,produto com defeito,resolvido,Contato sobre o pedido P000530: produto com defeito.
+T000173,P000897,2025-07-28,atraso na entrega,resolvido,Cliente relata que o pedido P000897 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000203,P001022,2025-07-28,atraso na entrega,aberto,Cliente relata que o pedido P001022 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000230,P001179,2025-07-28,atraso na entrega,resolvido,Cliente relata que o pedido P001179 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000239,P001216,2025-07-28,atraso na entrega,escalado,Cliente relata que o pedido P001216 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000035,P000170,2025-07-29,atraso na entrega,resolvido,Cliente relata que o pedido P000170 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000116,P000622,2025-07-29,atraso na entrega,aberto,Cliente relata que o pedido P000622 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000118,P000646,2025-07-29,produto com defeito,aberto,Contato sobre o pedido P000646: produto com defeito.
+T000124,P000663,2025-07-29,atraso na entrega,aberto,Cliente relata que o pedido P000663 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000152,P000796,2025-07-29,duvida sobre prazo,resolvido,Contato sobre o pedido P000796: duvida sobre prazo.
+T000166,P000866,2025-07-29,atraso na entrega,resolvido,Cliente relata que o pedido P000866 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000225,P001140,2025-07-29,atraso na entrega,aberto,Cliente relata que o pedido P001140 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000226,P001141,2025-07-29,atraso na entrega,escalado,Cliente relata que o pedido P001141 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000701,,2025-07-29,duvida geral,resolvido,Contato sem pedido identificado.
+T000055,P000282,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000282 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000090,P000463,2025-07-30,atraso na entrega,aberto,Contato sobre o pedido P000463: atraso na entrega.
+T000096,P000514,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000514 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000102,P000541,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000541 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000117,P000629,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000629 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000142,P000732,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000732 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000150,P000778,2025-07-30,atraso na entrega,aberto,Cliente relata que o pedido P000778 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000170,P000887,2025-07-30,atraso na entrega,resolvido,Cliente relata que o pedido P000887 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000213,P001068,2025-07-30,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P001068.
+T000223,P001120,2025-07-30,atraso na entrega,aberto,Cliente relata que o pedido P001120 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000706,,2025-07-30,duvida geral,resolvido,Contato sem pedido identificado.
+T000017,P000078,2025-07-31,atraso na entrega,aberto,Cliente relata que o pedido P000078 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000076,P000415,2025-07-31,troca,resolvido,Contato sobre o pedido P000415: troca.
+T000129,P000682,2025-07-31,atraso na entrega,aberto,Contato sobre o pedido P000682: atraso na entrega.
+T000154,P000810,2025-07-31,duvida sobre prazo,resolvido,Contato sobre o pedido P000810: duvida sobre prazo.
+T000157,P000817,2025-07-31,atraso na entrega,resolvido,Cliente relata que o pedido P000817 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000175,P000905,2025-07-31,atraso na entrega,resolvido,Cliente relata que o pedido P000905 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000198,P001001,2025-07-31,atraso na entrega,aberto,Cliente relata que o pedido P001001 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000019,P000088,2025-08-01,atraso na entrega,resolvido,Cliente relata que o pedido P000088 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000044,P000216,2025-08-01,atraso na entrega,resolvido,Cliente relata que o pedido P000216 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000094,P000495,2025-08-01,reembolso,resolvido,Contato sobre o pedido P000495: reembolso.
+T000052,P000268,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000268 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000061,P000316,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000316 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000079,P000429,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000429 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000080,P000430,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000430 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000085,P000446,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000446 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000122,P000661,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000661 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000133,P000700,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P000700 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000159,P000827,2025-08-02,pedido de cancelamento,resolvido,Contato sobre o pedido P000827: pedido de cancelamento.
+T000243,P001230,2025-08-02,atraso na entrega,resolvido,Cliente relata que o pedido P001230 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000278,P001425,2025-08-02,atraso na entrega,aberto,Cliente relata que o pedido P001425 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000023,P000115,2025-08-03,duvida sobre prazo,resolvido,Contato sobre o pedido P000115: duvida sobre prazo.
+T000169,P000874,2025-08-03,duvida sobre prazo,aberto,Contato sobre o pedido P000874: duvida sobre prazo.
+T000193,P000973,2025-08-03,atraso na entrega,aberto,Cliente relata que o pedido P000973 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000195,P000982,2025-08-03,atraso na entrega,resolvido,Cliente relata que o pedido P000982 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000687,,2025-08-03,duvida geral,resolvido,Contato sem pedido identificado.
+T000208,P001038,2025-08-04,atraso na entrega,aberto,Cliente relata que o pedido P001038 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000234,P001194,2025-08-04,atraso na entrega,escalado,Cliente relata que o pedido P001194 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000253,P001300,2025-08-04,reembolso,aberto,Contato sobre o pedido P001300: reembolso.
+T000344,P001783,2025-08-04,atraso na entrega,resolvido,Cliente relata que o pedido P001783 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000383,P002034,2025-08-04,atraso na entrega,resolvido,Cliente relata que o pedido P002034 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000071,P000392,2025-08-05,atraso na entrega,aberto,Contato sobre o pedido P000392: atraso na entrega.
+T000140,P000723,2025-08-05,duvida sobre prazo,resolvido,Contato sobre o pedido P000723: duvida sobre prazo.
+T000264,P001373,2025-08-05,atraso na entrega,resolvido,Cliente relata que o pedido P001373 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000275,P001422,2025-08-05,atraso na entrega,resolvido,Cliente relata que o pedido P001422 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000300,P001555,2025-08-05,atraso na entrega,resolvido,Cliente relata que o pedido P001555 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000382,P002031,2025-08-05,atraso na entrega,escalado,Contato sobre o pedido P002031: atraso na entrega.
+T000422,P002275,2025-08-05,atraso na entrega,resolvido,Cliente relata que o pedido P002275 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000018,P000086,2025-08-06,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P000086.
+T000134,P000703,2025-08-06,atraso na entrega,aberto,Cliente relata que o pedido P000703 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000317,P001646,2025-08-06,atraso na entrega,resolvido,Cliente relata que o pedido P001646 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000366,P001927,2025-08-06,atraso na entrega,resolvido,Cliente relata que o pedido P001927 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000386,P002061,2025-08-06,pedido de cancelamento,aberto,Contato sobre o pedido P002061: pedido de cancelamento.
+T000400,P002158,2025-08-06,atraso na entrega,resolvido,Cliente relata que o pedido P002158 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000455,P002450,2025-08-06,atraso na entrega,resolvido,Cliente relata que o pedido P002450 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000077,P000419,2025-08-07,duvida sobre prazo,escalado,Contato sobre o pedido P000419: duvida sobre prazo.
+T000301,P001556,2025-08-07,atraso na entrega,resolvido,Cliente relata que o pedido P001556 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000440,P002383,2025-08-07,pedido de cancelamento,aberto,Cliente solicita cancelamento do pedido P002383.
+T000014,P000071,2025-08-08,duvida sobre prazo,aberto,Contato sobre o pedido P000071: duvida sobre prazo.
+T000242,P001228,2025-08-08,atraso na entrega,resolvido,Cliente relata que o pedido P001228 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000302,P001563,2025-08-08,atraso na entrega,resolvido,Cliente relata que o pedido P001563 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000306,P001587,2025-08-08,atraso na entrega,resolvido,Cliente relata que o pedido P001587 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000311,P001627,2025-08-08,reembolso,resolvido,Contato sobre o pedido P001627: reembolso.
+T000351,P001823,2025-08-08,atraso na entrega,escalado,Cliente relata que o pedido P001823 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000352,P001826,2025-08-08,atraso na entrega,resolvido,Contato sobre o pedido P001826: atraso na entrega.
+T000353,P001834,2025-08-08,pedido de cancelamento,resolvido,Contato sobre o pedido P001834: pedido de cancelamento.
+T000364,P001925,2025-08-08,atraso na entrega,aberto,Cliente relata que o pedido P001925 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000398,P002147,2025-08-08,atraso na entrega,aberto,Cliente relata que o pedido P002147 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000441,P002385,2025-08-08,atraso na entrega,resolvido,Cliente relata que o pedido P002385 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000331,P001728,2025-08-09,produto com defeito,escalado,Contato sobre o pedido P001728: produto com defeito.
+T000387,P002062,2025-08-09,atraso na entrega,escalado,Cliente relata que o pedido P002062 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000405,P002180,2025-08-09,atraso na entrega,resolvido,Cliente relata que o pedido P002180 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000256,P001312,2025-08-10,pedido de cancelamento,aberto,Cliente solicita cancelamento do pedido P001312.
+T000271,P001407,2025-08-10,atraso na entrega,resolvido,Cliente relata que o pedido P001407 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000276,P001423,2025-08-10,atraso na entrega,resolvido,Contato sobre o pedido P001423: atraso na entrega.
+T000321,P001654,2025-08-10,atraso na entrega,resolvido,Cliente relata que o pedido P001654 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000336,P001752,2025-08-10,atraso na entrega,aberto,Cliente relata que o pedido P001752 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000396,P002140,2025-08-10,atraso na entrega,aberto,Cliente relata que o pedido P002140 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000417,P002257,2025-08-10,duvida sobre prazo,resolvido,Contato sobre o pedido P002257: duvida sobre prazo.
+T000450,P002429,2025-08-10,atraso na entrega,resolvido,Cliente relata que o pedido P002429 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000456,P002465,2025-08-10,atraso na entrega,resolvido,Cliente relata que o pedido P002465 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000251,P001296,2025-08-11,atraso na entrega,aberto,Cliente relata que o pedido P001296 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000257,P001316,2025-08-11,atraso na entrega,resolvido,Cliente relata que o pedido P001316 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000259,P001322,2025-08-11,atraso na entrega,resolvido,Cliente relata que o pedido P001322 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000265,P001383,2025-08-11,produto com defeito,resolvido,Contato sobre o pedido P001383: produto com defeito.
+T000267,P001388,2025-08-11,atraso na entrega,aberto,Cliente relata que o pedido P001388 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000305,P001578,2025-08-11,atraso na entrega,escalado,Cliente relata que o pedido P001578 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000329,P001718,2025-08-11,atraso na entrega,resolvido,Cliente relata que o pedido P001718 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000354,P001844,2025-08-11,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P001844.
+T000414,P002237,2025-08-11,atraso na entrega,resolvido,Cliente relata que o pedido P002237 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000418,P002263,2025-08-11,troca,resolvido,Contato sobre o pedido P002263: troca.
+T000459,P002473,2025-08-11,troca,resolvido,Contato sobre o pedido P002473: troca.
+T000282,P001455,2025-08-12,atraso na entrega,resolvido,Cliente relata que o pedido P001455 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000293,P001523,2025-08-12,atraso na entrega,resolvido,Contato sobre o pedido P001523: atraso na entrega.
+T000295,P001534,2025-08-12,atraso na entrega,aberto,Contato sobre o pedido P001534: atraso na entrega.
+T000348,P001804,2025-08-12,atraso na entrega,resolvido,Cliente relata que o pedido P001804 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000435,P002354,2025-08-12,atraso na entrega,aberto,Cliente relata que o pedido P002354 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000438,P002377,2025-08-12,atraso na entrega,resolvido,Cliente relata que o pedido P002377 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000453,P002439,2025-08-12,atraso na entrega,resolvido,Cliente relata que o pedido P002439 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000685,,2025-08-12,duvida geral,resolvido,Contato sem pedido identificado.
+T000255,P001304,2025-08-13,atraso na entrega,resolvido,Cliente relata que o pedido P001304 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000318,P001649,2025-08-13,atraso na entrega,aberto,Cliente relata que o pedido P001649 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000350,P001821,2025-08-13,atraso na entrega,resolvido,Contato sobre o pedido P001821: atraso na entrega.
+T000360,P001883,2025-08-13,atraso na entrega,resolvido,Cliente relata que o pedido P001883 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000361,P001896,2025-08-13,atraso na entrega,aberto,Cliente relata que o pedido P001896 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000378,P002012,2025-08-13,atraso na entrega,escalado,Cliente relata que o pedido P002012 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000379,P002013,2025-08-13,atraso na entrega,resolvido,Cliente relata que o pedido P002013 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000452,P002431,2025-08-13,pedido de cancelamento,escalado,Cliente solicita cancelamento do pedido P002431.
+T000697,,2025-08-13,duvida geral,resolvido,Contato sem pedido identificado.
+T000258,P001319,2025-08-14,atraso na entrega,aberto,Cliente relata que o pedido P001319 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000307,P001592,2025-08-14,troca,resolvido,Contato sobre o pedido P001592: troca.
+T000309,P001617,2025-08-14,atraso na entrega,resolvido,Cliente relata que o pedido P001617 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000340,P001764,2025-08-14,atraso na entrega,resolvido,Cliente relata que o pedido P001764 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000346,P001786,2025-08-14,atraso na entrega,resolvido,Cliente relata que o pedido P001786 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000389,P002082,2025-08-14,duvida sobre prazo,resolvido,Contato sobre o pedido P002082: duvida sobre prazo.
+T000436,P002358,2025-08-14,atraso na entrega,escalado,Cliente relata que o pedido P002358 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000447,P002418,2025-08-14,duvida sobre prazo,resolvido,Contato sobre o pedido P002418: duvida sobre prazo.
+T000696,,2025-08-14,duvida geral,resolvido,Contato sem pedido identificado.
+T000707,,2025-08-14,duvida geral,resolvido,Contato sem pedido identificado.
+T000268,P001389,2025-08-15,atraso na entrega,resolvido,Contato sobre o pedido P001389: atraso na entrega.
+T000280,P001429,2025-08-15,atraso na entrega,resolvido,Cliente relata que o pedido P001429 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000299,P001549,2025-08-15,pedido de cancelamento,resolvido,Contato sobre o pedido P001549: pedido de cancelamento.
+T000334,P001737,2025-08-15,pedido de cancelamento,resolvido,Contato sobre o pedido P001737: pedido de cancelamento.
+T000395,P002119,2025-08-15,atraso na entrega,aberto,Cliente relata que o pedido P002119 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000397,P002144,2025-08-15,pedido de cancelamento,resolvido,Contato sobre o pedido P002144: pedido de cancelamento.
+T000423,P002279,2025-08-15,produto com defeito,resolvido,Contato sobre o pedido P002279: produto com defeito.
+T000446,P002417,2025-08-15,produto com defeito,escalado,Contato sobre o pedido P002417: produto com defeito.
+T000273,P001409,2025-08-16,atraso na entrega,aberto,Cliente relata que o pedido P001409 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000439,P002379,2025-08-16,duvida sobre prazo,resolvido,Contato sobre o pedido P002379: duvida sobre prazo.
+T000445,P002416,2025-08-16,atraso na entrega,aberto,Contato sobre o pedido P002416: atraso na entrega.
+T000458,P002470,2025-08-16,atraso na entrega,aberto,Cliente relata que o pedido P002470 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000690,,2025-08-16,duvida geral,resolvido,Contato sem pedido identificado.
+T000319,P001652,2025-08-17,atraso na entrega,resolvido,Cliente relata que o pedido P001652 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000342,P001769,2025-08-17,atraso na entrega,resolvido,Cliente relata que o pedido P001769 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000357,P001853,2025-08-17,atraso na entrega,resolvido,Cliente relata que o pedido P001853 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000402,P002166,2025-08-17,atraso na entrega,aberto,Cliente relata que o pedido P002166 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000411,P002213,2025-08-17,atraso na entrega,escalado,Cliente relata que o pedido P002213 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000443,P002399,2025-08-17,duvida sobre prazo,resolvido,Contato sobre o pedido P002399: duvida sobre prazo.
+T000247,P001277,2025-08-18,atraso na entrega,aberto,Cliente relata que o pedido P001277 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000249,P001289,2025-08-18,produto com defeito,resolvido,Contato sobre o pedido P001289: produto com defeito.
+T000333,P001735,2025-08-18,pedido de cancelamento,resolvido,Contato sobre o pedido P001735: pedido de cancelamento.
+T000349,P001814,2025-08-18,atraso na entrega,resolvido,Cliente relata que o pedido P001814 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000356,P001850,2025-08-18,atraso na entrega,resolvido,Cliente relata que o pedido P001850 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000413,P002232,2025-08-18,atraso na entrega,aberto,Cliente relata que o pedido P002232 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000292,P001521,2025-08-19,troca,resolvido,Contato sobre o pedido P001521: troca.
+T000324,P001672,2025-08-19,reembolso,resolvido,Contato sobre o pedido P001672: reembolso.
+T000372,P001978,2025-08-19,atraso na entrega,resolvido,Cliente relata que o pedido P001978 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000375,P001999,2025-08-19,atraso na entrega,resolvido,Cliente relata que o pedido P001999 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000407,P002191,2025-08-19,atraso na entrega,escalado,Contato sobre o pedido P002191: atraso na entrega.
+T000420,P002268,2025-08-19,atraso na entrega,aberto,Cliente relata que o pedido P002268 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000421,P002271,2025-08-19,atraso na entrega,escalado,Cliente relata que o pedido P002271 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000442,P002387,2025-08-19,atraso na entrega,escalado,Cliente relata que o pedido P002387 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000448,P002420,2025-08-19,atraso na entrega,resolvido,Cliente relata que o pedido P002420 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000702,,2025-08-19,duvida geral,resolvido,Contato sem pedido identificado.
+T000245,P001253,2025-08-20,pedido de cancelamento,resolvido,Contato sobre o pedido P001253: pedido de cancelamento.
+T000269,P001396,2025-08-20,duvida sobre prazo,resolvido,Contato sobre o pedido P001396: duvida sobre prazo.
+T000289,P001496,2025-08-20,produto com defeito,resolvido,Contato sobre o pedido P001496: produto com defeito.
+T000313,P001630,2025-08-20,atraso na entrega,aberto,Cliente relata que o pedido P001630 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000362,P001907,2025-08-20,atraso na entrega,resolvido,Cliente relata que o pedido P001907 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000374,P001986,2025-08-20,duvida sobre prazo,resolvido,Contato sobre o pedido P001986: duvida sobre prazo.
+T000431,P002324,2025-08-20,atraso na entrega,resolvido,Cliente relata que o pedido P002324 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000454,P002448,2025-08-20,atraso na entrega,resolvido,Cliente relata que o pedido P002448 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000394,P002118,2025-08-21,atraso na entrega,resolvido,Cliente relata que o pedido P002118 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000404,P002172,2025-08-21,atraso na entrega,resolvido,Cliente relata que o pedido P002172 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000406,P002190,2025-08-21,atraso na entrega,resolvido,Cliente relata que o pedido P002190 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000424,P002280,2025-08-21,pedido de cancelamento,resolvido,Contato sobre o pedido P002280: pedido de cancelamento.
+T000700,,2025-08-21,duvida geral,resolvido,Contato sem pedido identificado.
+T000246,P001256,2025-08-22,atraso na entrega,resolvido,Cliente relata que o pedido P001256 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000365,P001926,2025-08-22,atraso na entrega,escalado,Contato sobre o pedido P001926: atraso na entrega.
+T000428,P002317,2025-08-22,atraso na entrega,resolvido,Cliente relata que o pedido P002317 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000457,P002467,2025-08-22,pedido de cancelamento,escalado,Cliente solicita cancelamento do pedido P002467.
+T000284,P001461,2025-08-23,atraso na entrega,resolvido,Cliente relata que o pedido P001461 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000290,P001503,2025-08-23,atraso na entrega,aberto,Cliente relata que o pedido P001503 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000320,P001653,2025-08-23,pedido de cancelamento,aberto,Contato sobre o pedido P001653: pedido de cancelamento.
+T000323,P001670,2025-08-23,atraso na entrega,aberto,Cliente relata que o pedido P001670 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000368,P001941,2025-08-23,duvida sobre prazo,aberto,Contato sobre o pedido P001941: duvida sobre prazo.
+T000390,P002085,2025-08-23,atraso na entrega,resolvido,Contato sobre o pedido P002085: atraso na entrega.
+T000392,P002098,2025-08-23,duvida sobre prazo,escalado,Contato sobre o pedido P002098: duvida sobre prazo.
+T000393,P002112,2025-08-23,duvida sobre prazo,resolvido,Contato sobre o pedido P002112: duvida sobre prazo.
+T000244,P001243,2025-08-24,duvida sobre prazo,resolvido,Contato sobre o pedido P001243: duvida sobre prazo.
+T000248,P001286,2025-08-24,atraso na entrega,aberto,Cliente relata que o pedido P001286 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000298,P001547,2025-08-24,troca,resolvido,Contato sobre o pedido P001547: troca.
+T000314,P001640,2025-08-24,atraso na entrega,aberto,Contato sobre o pedido P001640: atraso na entrega.
+T000430,P002321,2025-08-24,atraso na entrega,resolvido,Cliente relata que o pedido P002321 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000272,P001408,2025-08-25,atraso na entrega,resolvido,Cliente relata que o pedido P001408 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000341,P001768,2025-08-25,atraso na entrega,resolvido,Cliente relata que o pedido P001768 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000401,P002160,2025-08-25,atraso na entrega,resolvido,Cliente relata que o pedido P002160 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000254,P001302,2025-08-26,atraso na entrega,aberto,Cliente relata que o pedido P001302 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000281,P001453,2025-08-26,atraso na entrega,resolvido,Contato sobre o pedido P001453: atraso na entrega.
+T000315,P001642,2025-08-26,pedido de cancelamento,resolvido,Contato sobre o pedido P001642: pedido de cancelamento.
+T000330,P001723,2025-08-26,duvida sobre prazo,resolvido,Contato sobre o pedido P001723: duvida sobre prazo.
+T000337,P001753,2025-08-26,atraso na entrega,aberto,Cliente relata que o pedido P001753 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000343,P001778,2025-08-26,atraso na entrega,resolvido,Cliente relata que o pedido P001778 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000355,P001846,2025-08-26,atraso na entrega,resolvido,Cliente relata que o pedido P001846 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000359,P001880,2025-08-26,produto com defeito,resolvido,Contato sobre o pedido P001880: produto com defeito.
+T000376,P002009,2025-08-26,atraso na entrega,aberto,Contato sobre o pedido P002009: atraso na entrega.
+T000426,P002290,2025-08-26,atraso na entrega,aberto,Cliente relata que o pedido P002290 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000261,P001360,2025-08-27,pedido de cancelamento,aberto,Contato sobre o pedido P001360: pedido de cancelamento.
+T000274,P001411,2025-08-27,troca,resolvido,Contato sobre o pedido P001411: troca.
+T000285,P001475,2025-08-27,atraso na entrega,aberto,Cliente relata que o pedido P001475 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000286,P001483,2025-08-27,atraso na entrega,aberto,Cliente relata que o pedido P001483 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000345,P001784,2025-08-27,atraso na entrega,resolvido,Cliente relata que o pedido P001784 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000385,P002050,2025-08-27,produto com defeito,resolvido,Contato sobre o pedido P002050: produto com defeito.
+T000416,P002245,2025-08-27,atraso na entrega,resolvido,Cliente relata que o pedido P002245 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000425,P002282,2025-08-27,atraso na entrega,aberto,Cliente relata que o pedido P002282 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000432,P002326,2025-08-27,atraso na entrega,aberto,Cliente relata que o pedido P002326 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000444,P002413,2025-08-27,atraso na entrega,resolvido,Cliente relata que o pedido P002413 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000689,,2025-08-27,duvida geral,resolvido,Contato sem pedido identificado.
+T000270,P001403,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P001403 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000291,P001515,2025-08-28,atraso na entrega,escalado,Cliente relata que o pedido P001515 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000296,P001543,2025-08-28,atraso na entrega,escalado,Cliente relata que o pedido P001543 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000297,P001545,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P001545 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000312,P001629,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P001629 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000325,P001676,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P001676 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000332,P001730,2025-08-28,reembolso,resolvido,Contato sobre o pedido P001730: reembolso.
+T000338,P001754,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P001754 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000339,P001757,2025-08-28,atraso na entrega,resolvido,Contato sobre o pedido P001757: atraso na entrega.
+T000403,P002170,2025-08-28,atraso na entrega,resolvido,Cliente relata que o pedido P002170 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000408,P002195,2025-08-28,reembolso,escalado,Contato sobre o pedido P002195: reembolso.
+T000415,P002241,2025-08-28,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P002241.
+T000316,P001644,2025-08-29,atraso na entrega,resolvido,Cliente relata que o pedido P001644 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000347,P001790,2025-08-29,atraso na entrega,escalado,Cliente relata que o pedido P001790 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000367,P001932,2025-08-29,atraso na entrega,aberto,Cliente relata que o pedido P001932 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000377,P002011,2025-08-29,pedido de cancelamento,aberto,Contato sobre o pedido P002011: pedido de cancelamento.
+T000451,P002430,2025-08-29,atraso na entrega,resolvido,Cliente relata que o pedido P002430 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000266,P001386,2025-08-30,atraso na entrega,resolvido,Cliente relata que o pedido P001386 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000327,P001693,2025-08-30,troca,escalado,Contato sobre o pedido P001693: troca.
+T000388,P002075,2025-08-30,atraso na entrega,resolvido,Cliente relata que o pedido P002075 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000429,P002318,2025-08-30,atraso na entrega,resolvido,Cliente relata que o pedido P002318 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000437,P002373,2025-08-30,atraso na entrega,resolvido,Cliente relata que o pedido P002373 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000263,P001364,2025-08-31,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P001364.
+T000363,P001924,2025-08-31,produto com defeito,aberto,Contato sobre o pedido P001924: produto com defeito.
+T000380,P002018,2025-08-31,atraso na entrega,resolvido,Cliente relata que o pedido P002018 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000381,P002026,2025-08-31,atraso na entrega,escalado,Cliente relata que o pedido P002026 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000449,P002423,2025-08-31,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P002423.
+T000260,P001344,2025-09-01,atraso na entrega,resolvido,Cliente relata que o pedido P001344 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000262,P001363,2025-09-01,atraso na entrega,escalado,Cliente relata que o pedido P001363 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000287,P001493,2025-09-01,pedido de cancelamento,resolvido,Contato sobre o pedido P001493: pedido de cancelamento.
+T000303,P001566,2025-09-01,duvida sobre prazo,resolvido,Contato sobre o pedido P001566: duvida sobre prazo.
+T000322,P001664,2025-09-01,reembolso,escalado,Contato sobre o pedido P001664: reembolso.
+T000399,P002151,2025-09-01,atraso na entrega,aberto,Cliente relata que o pedido P002151 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000419,P002264,2025-09-01,atraso na entrega,aberto,Cliente relata que o pedido P002264 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000698,,2025-09-01,duvida geral,resolvido,Contato sem pedido identificado.
+T000277,P001424,2025-09-02,atraso na entrega,aberto,Cliente relata que o pedido P001424 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000283,P001458,2025-09-02,atraso na entrega,resolvido,Cliente relata que o pedido P001458 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000308,P001607,2025-09-02,atraso na entrega,resolvido,Cliente relata que o pedido P001607 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000358,P001877,2025-09-02,atraso na entrega,aberto,Cliente relata que o pedido P001877 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000369,P001965,2025-09-02,atraso na entrega,resolvido,Cliente relata que o pedido P001965 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000373,P001980,2025-09-02,produto com defeito,aberto,Contato sobre o pedido P001980: produto com defeito.
+T000384,P002040,2025-09-02,atraso na entrega,escalado,Cliente relata que o pedido P002040 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000410,P002205,2025-09-02,atraso na entrega,escalado,Cliente relata que o pedido P002205 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000434,P002347,2025-09-02,atraso na entrega,resolvido,Cliente relata que o pedido P002347 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000549,P002963,2025-09-02,atraso na entrega,resolvido,Cliente relata que o pedido P002963 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000294,P001531,2025-09-03,produto com defeito,resolvido,Contato sobre o pedido P001531: produto com defeito.
+T000370,P001976,2025-09-03,atraso na entrega,resolvido,Cliente relata que o pedido P001976 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000391,P002086,2025-09-03,reembolso,resolvido,Contato sobre o pedido P002086: reembolso.
+T000412,P002227,2025-09-03,atraso na entrega,resolvido,Cliente relata que o pedido P002227 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000427,P002307,2025-09-03,pedido de cancelamento,resolvido,Contato sobre o pedido P002307: pedido de cancelamento.
+T000558,P002999,2025-09-03,reembolso,resolvido,Contato sobre o pedido P002999: reembolso.
+T000594,P003190,2025-09-03,atraso na entrega,aberto,Cliente relata que o pedido P003190 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000605,P003235,2025-09-03,atraso na entrega,aberto,Cliente relata que o pedido P003235 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000250,P001293,2025-09-04,atraso na entrega,escalado,Cliente relata que o pedido P001293 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000279,P001426,2025-09-04,atraso na entrega,resolvido,Cliente relata que o pedido P001426 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000326,P001683,2025-09-04,atraso na entrega,aberto,Cliente relata que o pedido P001683 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000328,P001704,2025-09-04,atraso na entrega,resolvido,Cliente relata que o pedido P001704 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000433,P002327,2025-09-04,atraso na entrega,escalado,Cliente relata que o pedido P002327 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000500,P002723,2025-09-04,reembolso,resolvido,Contato sobre o pedido P002723: reembolso.
+T000514,P002809,2025-09-04,atraso na entrega,aberto,Contato sobre o pedido P002809: atraso na entrega.
+T000522,P002858,2025-09-04,atraso na entrega,aberto,Cliente relata que o pedido P002858 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000530,P002886,2025-09-04,atraso na entrega,resolvido,Cliente relata que o pedido P002886 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000547,P002957,2025-09-04,atraso na entrega,aberto,Cliente relata que o pedido P002957 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000606,P003237,2025-09-04,atraso na entrega,resolvido,Contato sobre o pedido P003237: atraso na entrega.
+T000615,P003288,2025-09-04,troca,aberto,Contato sobre o pedido P003288: troca.
+T000675,P003599,2025-09-04,atraso na entrega,resolvido,Cliente relata que o pedido P003599 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000686,,2025-09-04,duvida geral,resolvido,Contato sem pedido identificado.
+T000693,,2025-09-04,duvida geral,resolvido,Contato sem pedido identificado.
+T000252,P001298,2025-09-05,atraso na entrega,aberto,Cliente relata que o pedido P001298 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000288,P001494,2025-09-05,atraso na entrega,aberto,Contato sobre o pedido P001494: atraso na entrega.
+T000304,P001575,2025-09-05,atraso na entrega,escalado,Cliente relata que o pedido P001575 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000371,P001977,2025-09-05,pedido de cancelamento,resolvido,Contato sobre o pedido P001977: pedido de cancelamento.
+T000409,P002202,2025-09-05,atraso na entrega,aberto,Cliente relata que o pedido P002202 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000592,P003181,2025-09-05,atraso na entrega,aberto,Cliente relata que o pedido P003181 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000641,P003406,2025-09-05,atraso na entrega,resolvido,Cliente relata que o pedido P003406 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000335,P001741,2025-09-06,atraso na entrega,resolvido,Cliente relata que o pedido P001741 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000505,P002779,2025-09-06,atraso na entrega,resolvido,Cliente relata que o pedido P002779 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000515,P002812,2025-09-06,atraso na entrega,aberto,Cliente relata que o pedido P002812 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000560,P003010,2025-09-06,produto com defeito,resolvido,Contato sobre o pedido P003010: produto com defeito.
+T000580,P003109,2025-09-06,atraso na entrega,resolvido,Cliente relata que o pedido P003109 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000629,P003359,2025-09-06,atraso na entrega,resolvido,Cliente relata que o pedido P003359 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000674,P003592,2025-09-06,atraso na entrega,resolvido,Cliente relata que o pedido P003592 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000483,P002632,2025-09-07,atraso na entrega,aberto,Cliente relata que o pedido P002632 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000541,P002930,2025-09-07,troca,escalado,Contato sobre o pedido P002930: troca.
+T000571,P003063,2025-09-07,atraso na entrega,aberto,Cliente relata que o pedido P003063 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000576,P003082,2025-09-07,reembolso,resolvido,Contato sobre o pedido P003082: reembolso.
+T000614,P003281,2025-09-07,atraso na entrega,aberto,Cliente relata que o pedido P003281 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000627,P003345,2025-09-07,atraso na entrega,resolvido,Cliente relata que o pedido P003345 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000683,P003631,2025-09-07,atraso na entrega,aberto,Cliente relata que o pedido P003631 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000691,,2025-09-07,duvida geral,resolvido,Contato sem pedido identificado.
+T000310,P001619,2025-09-08,atraso na entrega,aberto,Cliente relata que o pedido P001619 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000490,P002676,2025-09-08,atraso na entrega,resolvido,Cliente relata que o pedido P002676 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000499,P002721,2025-09-08,atraso na entrega,resolvido,Cliente relata que o pedido P002721 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000504,P002774,2025-09-08,produto com defeito,aberto,Contato sobre o pedido P002774: produto com defeito.
+T000647,P003429,2025-09-08,atraso na entrega,resolvido,Cliente relata que o pedido P003429 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000656,P003492,2025-09-08,atraso na entrega,resolvido,Cliente relata que o pedido P003492 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000662,P003544,2025-09-08,atraso na entrega,aberto,Cliente relata que o pedido P003544 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000473,P002594,2025-09-09,troca,resolvido,Contato sobre o pedido P002594: troca.
+T000475,P002599,2025-09-09,atraso na entrega,resolvido,Cliente relata que o pedido P002599 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000485,P002640,2025-09-09,pedido de cancelamento,resolvido,Contato sobre o pedido P002640: pedido de cancelamento.
+T000495,P002704,2025-09-09,produto com defeito,resolvido,Contato sobre o pedido P002704: produto com defeito.
+T000610,P003268,2025-09-09,atraso na entrega,resolvido,Cliente relata que o pedido P003268 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000621,P003317,2025-09-09,produto com defeito,aberto,Contato sobre o pedido P003317: produto com defeito.
+T000632,P003374,2025-09-09,atraso na entrega,resolvido,Contato sobre o pedido P003374: atraso na entrega.
+T000663,P003545,2025-09-09,atraso na entrega,resolvido,Cliente relata que o pedido P003545 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000694,,2025-09-09,duvida geral,resolvido,Contato sem pedido identificado.
+T000468,P002551,2025-09-10,atraso na entrega,resolvido,Cliente relata que o pedido P002551 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000529,P002878,2025-09-10,pedido de cancelamento,escalado,Contato sobre o pedido P002878: pedido de cancelamento.
+T000591,P003180,2025-09-10,atraso na entrega,resolvido,Cliente relata que o pedido P003180 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000636,P003394,2025-09-10,atraso na entrega,resolvido,Cliente relata que o pedido P003394 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000638,P003397,2025-09-10,atraso na entrega,aberto,Cliente relata que o pedido P003397 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000646,P003425,2025-09-10,atraso na entrega,resolvido,Cliente relata que o pedido P003425 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000467,P002546,2025-09-11,atraso na entrega,aberto,Cliente relata que o pedido P002546 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000480,P002622,2025-09-11,atraso na entrega,resolvido,Cliente relata que o pedido P002622 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000528,P002875,2025-09-11,pedido de cancelamento,aberto,Contato sobre o pedido P002875: pedido de cancelamento.
+T000535,P002905,2025-09-11,atraso na entrega,escalado,Cliente relata que o pedido P002905 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000552,P002975,2025-09-11,atraso na entrega,aberto,Cliente relata que o pedido P002975 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000588,P003165,2025-09-11,atraso na entrega,resolvido,Cliente relata que o pedido P003165 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000625,P003335,2025-09-11,atraso na entrega,resolvido,Cliente relata que o pedido P003335 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000640,P003404,2025-09-11,atraso na entrega,aberto,Cliente relata que o pedido P003404 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000650,P003452,2025-09-11,atraso na entrega,resolvido,Cliente relata que o pedido P003452 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000654,P003473,2025-09-11,atraso na entrega,resolvido,Cliente relata que o pedido P003473 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000533,P002894,2025-09-12,atraso na entrega,resolvido,Contato sobre o pedido P002894: atraso na entrega.
+T000538,P002915,2025-09-12,atraso na entrega,resolvido,Cliente relata que o pedido P002915 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000570,P003060,2025-09-12,atraso na entrega,resolvido,Cliente relata que o pedido P003060 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000611,P003273,2025-09-12,produto com defeito,resolvido,Contato sobre o pedido P003273: produto com defeito.
+T000587,P003155,2025-09-13,atraso na entrega,aberto,Cliente relata que o pedido P003155 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000604,P003228,2025-09-13,atraso na entrega,resolvido,Cliente relata que o pedido P003228 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000623,P003323,2025-09-13,pedido de cancelamento,resolvido,Contato sobre o pedido P003323: pedido de cancelamento.
+T000460,P002476,2025-09-14,atraso na entrega,aberto,Cliente relata que o pedido P002476 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000470,P002568,2025-09-14,atraso na entrega,escalado,Cliente relata que o pedido P002568 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000477,P002609,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P002609 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000486,P002647,2025-09-14,atraso na entrega,aberto,Cliente relata que o pedido P002647 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000492,P002688,2025-09-14,reembolso,resolvido,Contato sobre o pedido P002688: reembolso.
+T000512,P002803,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P002803 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000561,P003020,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P003020 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000565,P003039,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P003039 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000574,P003074,2025-09-14,atraso na entrega,aberto,Cliente relata que o pedido P003074 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000602,P003219,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P003219 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000664,P003549,2025-09-14,atraso na entrega,resolvido,Cliente relata que o pedido P003549 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000509,P002793,2025-09-15,atraso na entrega,resolvido,Cliente relata que o pedido P002793 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000524,P002866,2025-09-15,atraso na entrega,resolvido,Cliente relata que o pedido P002866 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000562,P003025,2025-09-15,atraso na entrega,aberto,Cliente relata que o pedido P003025 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000622,P003322,2025-09-15,atraso na entrega,aberto,Cliente relata que o pedido P003322 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000635,P003388,2025-09-15,atraso na entrega,aberto,Cliente relata que o pedido P003388 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000659,P003527,2025-09-15,atraso na entrega,escalado,Cliente relata que o pedido P003527 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000508,P002791,2025-09-16,duvida sobre prazo,resolvido,Contato sobre o pedido P002791: duvida sobre prazo.
+T000568,P003054,2025-09-16,atraso na entrega,resolvido,Cliente relata que o pedido P003054 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000593,P003188,2025-09-16,atraso na entrega,aberto,Cliente relata que o pedido P003188 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000669,P003576,2025-09-16,atraso na entrega,resolvido,Cliente relata que o pedido P003576 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000487,P002649,2025-09-17,atraso na entrega,escalado,Cliente relata que o pedido P002649 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000526,P002873,2025-09-17,atraso na entrega,resolvido,Cliente relata que o pedido P002873 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000536,P002908,2025-09-17,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P002908.
+T000540,P002926,2025-09-17,troca,escalado,Contato sobre o pedido P002926: troca.
+T000551,P002974,2025-09-17,atraso na entrega,aberto,Cliente relata que o pedido P002974 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000596,P003197,2025-09-17,atraso na entrega,resolvido,Cliente relata que o pedido P003197 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000597,P003202,2025-09-17,atraso na entrega,resolvido,Cliente relata que o pedido P003202 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000651,P003463,2025-09-17,reembolso,escalado,Contato sobre o pedido P003463: reembolso.
+T000464,P002504,2025-09-18,atraso na entrega,escalado,Cliente relata que o pedido P002504 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000510,P002801,2025-09-18,atraso na entrega,aberto,Cliente relata que o pedido P002801 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000525,P002869,2025-09-18,atraso na entrega,aberto,Cliente relata que o pedido P002869 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000531,P002890,2025-09-18,atraso na entrega,aberto,Cliente relata que o pedido P002890 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000569,P003057,2025-09-18,produto com defeito,resolvido,Contato sobre o pedido P003057: produto com defeito.
+T000579,P003103,2025-09-18,atraso na entrega,resolvido,Cliente relata que o pedido P003103 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000581,P003124,2025-09-18,atraso na entrega,aberto,Cliente relata que o pedido P003124 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000603,P003222,2025-09-18,produto com defeito,resolvido,Contato sobre o pedido P003222: produto com defeito.
+T000678,P003612,2025-09-18,atraso na entrega,resolvido,Cliente relata que o pedido P003612 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000462,P002493,2025-09-19,atraso na entrega,escalado,Cliente relata que o pedido P002493 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000481,P002623,2025-09-19,atraso na entrega,aberto,Cliente relata que o pedido P002623 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000489,P002664,2025-09-19,produto com defeito,escalado,Contato sobre o pedido P002664: produto com defeito.
+T000497,P002712,2025-09-19,atraso na entrega,aberto,Cliente relata que o pedido P002712 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000511,P002802,2025-09-19,atraso na entrega,resolvido,Cliente relata que o pedido P002802 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000520,P002836,2025-09-19,atraso na entrega,aberto,Cliente relata que o pedido P002836 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000539,P002916,2025-09-19,atraso na entrega,resolvido,Cliente relata que o pedido P002916 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000556,P002990,2025-09-19,atraso na entrega,resolvido,Cliente relata que o pedido P002990 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000573,P003071,2025-09-19,atraso na entrega,escalado,Cliente relata que o pedido P003071 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000652,P003464,2025-09-19,produto com defeito,resolvido,Contato sobre o pedido P003464: produto com defeito.
+T000658,P003523,2025-09-19,atraso na entrega,resolvido,Cliente relata que o pedido P003523 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000466,P002536,2025-09-20,atraso na entrega,resolvido,Cliente relata que o pedido P002536 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000517,P002823,2025-09-20,atraso na entrega,resolvido,Cliente relata que o pedido P002823 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000519,P002833,2025-09-20,atraso na entrega,resolvido,Cliente relata que o pedido P002833 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000682,P003624,2025-09-20,atraso na entrega,escalado,Cliente relata que o pedido P003624 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000506,P002781,2025-09-21,atraso na entrega,aberto,Cliente relata que o pedido P002781 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000518,P002831,2025-09-21,atraso na entrega,resolvido,Cliente relata que o pedido P002831 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000546,P002956,2025-09-21,atraso na entrega,aberto,Cliente relata que o pedido P002956 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000564,P003029,2025-09-21,atraso na entrega,resolvido,Cliente relata que o pedido P003029 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000586,P003148,2025-09-21,produto com defeito,aberto,Contato sobre o pedido P003148: produto com defeito.
+T000667,P003563,2025-09-21,atraso na entrega,resolvido,Cliente relata que o pedido P003563 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000469,P002566,2025-09-22,atraso na entrega,aberto,Cliente relata que o pedido P002566 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000482,P002625,2025-09-22,atraso na entrega,aberto,Cliente relata que o pedido P002625 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000488,P002650,2025-09-22,atraso na entrega,aberto,Cliente relata que o pedido P002650 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000501,P002727,2025-09-22,atraso na entrega,resolvido,Cliente relata que o pedido P002727 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000548,P002961,2025-09-22,produto com defeito,aberto,Contato sobre o pedido P002961: produto com defeito.
+T000563,P003026,2025-09-22,atraso na entrega,aberto,Cliente relata que o pedido P003026 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000566,P003041,2025-09-22,atraso na entrega,aberto,Cliente relata que o pedido P003041 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000589,P003169,2025-09-22,atraso na entrega,resolvido,Cliente relata que o pedido P003169 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000601,P003218,2025-09-22,atraso na entrega,resolvido,Cliente relata que o pedido P003218 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000619,P003299,2025-09-22,troca,resolvido,Contato sobre o pedido P003299: troca.
+T000476,P002604,2025-09-23,reembolso,resolvido,Contato sobre o pedido P002604: reembolso.
+T000493,P002694,2025-09-23,troca,resolvido,Contato sobre o pedido P002694: troca.
+T000583,P003126,2025-09-23,atraso na entrega,resolvido,Cliente relata que o pedido P003126 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000599,P003208,2025-09-23,atraso na entrega,resolvido,Cliente relata que o pedido P003208 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000620,P003304,2025-09-23,atraso na entrega,resolvido,Cliente relata que o pedido P003304 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000670,P003577,2025-09-23,atraso na entrega,aberto,Cliente relata que o pedido P003577 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000672,P003582,2025-09-23,atraso na entrega,resolvido,Cliente relata que o pedido P003582 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000679,P003613,2025-09-23,produto com defeito,escalado,Contato sobre o pedido P003613: produto com defeito.
+T000472,P002571,2025-09-24,reembolso,resolvido,Contato sobre o pedido P002571: reembolso.
+T000498,P002714,2025-09-24,atraso na entrega,resolvido,Cliente relata que o pedido P002714 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000503,P002768,2025-09-24,atraso na entrega,escalado,Cliente relata que o pedido P002768 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000516,P002814,2025-09-24,atraso na entrega,resolvido,Cliente relata que o pedido P002814 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000618,P003298,2025-09-24,atraso na entrega,aberto,Cliente relata que o pedido P003298 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000624,P003331,2025-09-24,atraso na entrega,resolvido,Cliente relata que o pedido P003331 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000648,P003433,2025-09-24,atraso na entrega,aberto,Cliente relata que o pedido P003433 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000653,P003469,2025-09-24,atraso na entrega,resolvido,Cliente relata que o pedido P003469 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000657,P003498,2025-09-24,troca,aberto,Contato sobre o pedido P003498: troca.
+T000668,P003564,2025-09-24,atraso na entrega,resolvido,Cliente relata que o pedido P003564 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000465,P002508,2025-09-25,reembolso,aberto,Contato sobre o pedido P002508: reembolso.
+T000479,P002614,2025-09-25,atraso na entrega,resolvido,Cliente relata que o pedido P002614 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000555,P002985,2025-09-25,atraso na entrega,resolvido,Cliente relata que o pedido P002985 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000557,P002994,2025-09-25,atraso na entrega,resolvido,Cliente relata que o pedido P002994 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000559,P003000,2025-09-25,atraso na entrega,resolvido,Cliente relata que o pedido P003000 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000577,P003085,2025-09-25,atraso na entrega,aberto,Cliente relata que o pedido P003085 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000585,P003146,2025-09-25,atraso na entrega,aberto,Cliente relata que o pedido P003146 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000612,P003276,2025-09-25,atraso na entrega,resolvido,Cliente relata que o pedido P003276 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000613,P003279,2025-09-25,atraso na entrega,aberto,Cliente relata que o pedido P003279 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000633,P003383,2025-09-25,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P003383.
+T000474,P002596,2025-09-26,atraso na entrega,escalado,Cliente relata que o pedido P002596 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000532,P002892,2025-09-26,atraso na entrega,resolvido,Cliente relata que o pedido P002892 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000542,P002938,2025-09-26,pedido de cancelamento,aberto,Contato sobre o pedido P002938: pedido de cancelamento.
+T000543,P002942,2025-09-26,produto com defeito,aberto,Contato sobre o pedido P002942: produto com defeito.
+T000553,P002977,2025-09-26,atraso na entrega,resolvido,Cliente relata que o pedido P002977 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000567,P003048,2025-09-26,atraso na entrega,escalado,Cliente relata que o pedido P003048 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000631,P003369,2025-09-26,atraso na entrega,escalado,Cliente relata que o pedido P003369 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000660,P003534,2025-09-26,atraso na entrega,resolvido,Cliente relata que o pedido P003534 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000684,,2025-09-26,duvida geral,resolvido,Contato sem pedido identificado.
+T000478,P002613,2025-09-27,atraso na entrega,escalado,Cliente relata que o pedido P002613 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000494,P002700,2025-09-27,atraso na entrega,resolvido,Cliente relata que o pedido P002700 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000537,P002912,2025-09-27,atraso na entrega,aberto,Cliente relata que o pedido P002912 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000582,P003125,2025-09-27,pedido de cancelamento,resolvido,Contato sobre o pedido P003125: pedido de cancelamento.
+T000595,P003192,2025-09-27,reembolso,resolvido,Contato sobre o pedido P003192: reembolso.
+T000634,P003387,2025-09-27,atraso na entrega,resolvido,Cliente relata que o pedido P003387 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000639,P003402,2025-09-27,atraso na entrega,aberto,Cliente relata que o pedido P003402 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000661,P003536,2025-09-27,atraso na entrega,aberto,Cliente relata que o pedido P003536 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000461,P002485,2025-09-28,produto com defeito,resolvido,Contato sobre o pedido P002485: produto com defeito.
+T000513,P002807,2025-09-28,atraso na entrega,resolvido,Cliente relata que o pedido P002807 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000584,P003133,2025-09-28,pedido de cancelamento,resolvido,Cliente solicita cancelamento do pedido P003133.
+T000645,P003424,2025-09-28,atraso na entrega,resolvido,Cliente relata que o pedido P003424 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000677,P003610,2025-09-28,atraso na entrega,resolvido,Contato sobre o pedido P003610: atraso na entrega.
+T000680,P003617,2025-09-28,atraso na entrega,aberto,Cliente relata que o pedido P003617 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000463,P002496,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P002496 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000471,P002570,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P002570 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000491,P002685,2025-09-29,atraso na entrega,aberto,Contato sobre o pedido P002685: atraso na entrega.
+T000502,P002764,2025-09-29,atraso na entrega,aberto,Cliente relata que o pedido P002764 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000534,P002904,2025-09-29,atraso na entrega,aberto,Cliente relata que o pedido P002904 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000550,P002968,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P002968 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000578,P003098,2025-09-29,atraso na entrega,resolvido,Contato sobre o pedido P003098: atraso na entrega.
+T000608,P003249,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P003249 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000616,P003289,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P003289 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000630,P003362,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P003362 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000666,P003555,2025-09-29,atraso na entrega,resolvido,Cliente relata que o pedido P003555 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000484,P002633,2025-09-30,atraso na entrega,resolvido,Cliente relata que o pedido P002633 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000521,P002848,2025-09-30,atraso na entrega,aberto,Cliente relata que o pedido P002848 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000545,P002954,2025-09-30,atraso na entrega,resolvido,Cliente relata que o pedido P002954 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000554,P002979,2025-09-30,atraso na entrega,resolvido,Cliente relata que o pedido P002979 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000626,P003337,2025-09-30,atraso na entrega,aberto,Cliente relata que o pedido P003337 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000643,P003414,2025-09-30,atraso na entrega,aberto,Cliente relata que o pedido P003414 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000644,P003418,2025-09-30,atraso na entrega,escalado,Cliente relata que o pedido P003418 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000671,P003581,2025-09-30,atraso na entrega,aberto,Cliente relata que o pedido P003581 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000673,P003587,2025-09-30,duvida sobre prazo,aberto,Contato sobre o pedido P003587: duvida sobre prazo.
+T000681,P003619,2025-09-30,atraso na entrega,aberto,Cliente relata que o pedido P003619 ultrapassou o prazo prometido de 3 dias com a transportadora Correios.
+T000590,P003177,2025-10-01,atraso na entrega,resolvido,Cliente relata que o pedido P003177 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000598,P003205,2025-10-01,atraso na entrega,resolvido,Cliente relata que o pedido P003205 ultrapassou o prazo prometido de 5 dias com a transportadora Correios.
+T000609,P003266,2025-10-01,atraso na entrega,resolvido,Cliente relata que o pedido P003266 ultrapassou o prazo prometido de 5 dias com a transportadora EntregaBR.
+T000617,P003291,2025-10-01,atraso na entrega,resolvido,Cliente relata que o pedido P003291 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000523,P002864,2025-10-02,reembolso,aberto,Contato sobre o pedido P002864: reembolso.
+T000572,P003067,2025-10-02,atraso na entrega,resolvido,Cliente relata que o pedido P003067 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000676,P003609,2025-10-02,atraso na entrega,aberto,Cliente relata que o pedido P003609 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000575,P003081,2025-10-03,produto com defeito,resolvido,Contato sobre o pedido P003081: produto com defeito.
+T000642,P003409,2025-10-03,pedido de cancelamento,resolvido,Contato sobre o pedido P003409: pedido de cancelamento.
+T000649,P003451,2025-10-03,atraso na entrega,aberto,Cliente relata que o pedido P003451 ultrapassou o prazo prometido de 3 dias com a transportadora EntregaBR.
+T000527,P002874,2025-10-04,atraso na entrega,resolvido,Cliente relata que o pedido P002874 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000600,P003212,2025-10-04,atraso na entrega,aberto,Cliente relata que o pedido P003212 ultrapassou o prazo prometido de 7 dias com a transportadora Correios.
+T000628,P003358,2025-10-04,atraso na entrega,aberto,Cliente relata que o pedido P003358 ultrapassou o prazo prometido de 3 dias com a transportadora RapidoLog.
+T000637,P003395,2025-10-04,troca,escalado,Contato sobre o pedido P003395: troca.
+T000655,P003478,2025-10-04,atraso na entrega,aberto,Cliente relata que o pedido P003478 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000544,P002950,2025-10-05,atraso na entrega,resolvido,Cliente relata que o pedido P002950 ultrapassou o prazo prometido de 5 dias com a transportadora RapidoLog.
+T000496,P002709,2025-10-06,atraso na entrega,escalado,Cliente relata que o pedido P002709 ultrapassou o prazo prometido de 7 dias com a transportadora EntregaBR.
+T000507,P002787,2025-10-07,atraso na entrega,resolvido,Cliente relata que o pedido P002787 ultrapassou o prazo prometido de 7 dias com a transportadora RapidoLog.
+T000665,P003554,2025-10-07,pedido de cancelamento,escalado,Contato sobre o pedido P003554: pedido de cancelamento.
+T000607,P003247,2025-10-08,duvida sobre prazo,aberto,Contato sobre o pedido P003247: duvida sobre prazo.

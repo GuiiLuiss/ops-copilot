@@ -1,0 +1,40 @@
+[MAIN]
+init-hook='import sys; sys.path.insert(0, "src")'
+ignore=.venv
+
+[FORMAT]
+max-line-length=110
+
+[DESIGN]
+# Limites ajustados ao projeto: dataclasses de dados (RunTrace, Chunk, Order) têm muitos
+# campos de propósito; gerador de dados e checks de avaliação são funções sequenciais.
+max-args=10
+max-locals=25
+max-branches=20
+max-statements=60
+max-attributes=20
+max-positional-arguments=10
+
+[MESSAGES CONTROL]
+# Convenções do projeto:
+# - C0114/C0115/C0116: módulos públicos têm docstring; funções curtas, testes e nós internos não precisam.
+# - C0415: imports lazy no CLI e nos provedores evitam carregar streamlit/uvicorn/torch sem necessidade.
+# - W0718: o grafo do agente captura Exception de propósito para terminar em estado `failed`.
+# - W0613: FastAPI usa o parâmetro `user` (Depends) como gate de autenticação mesmo sem lê-lo.
+# - W0621/W0611/W0401: fixtures pytest importadas e redefinidas.
+disable=
+    C0114,
+    C0115,
+    C0116,
+    C0415,
+    W0718,
+    W0613,
+    W0621,
+    R0801,
+    R0903,
+
+[BASIC]
+good-names=i,j,k,e,f,p,q,r,s,t,h,c,d,m,v,db,at,ok,rt,io,id,_
+
+[TYPECHECK]
+ignored-modules=faiss,sentence_transformers

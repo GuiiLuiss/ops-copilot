@@ -1,0 +1,35 @@
+# Segredos
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Artefatos locais gerados
+data/synthetic/*.db
+data/synthetic/*.db-journal
+data/index/
+logs/
+# Relatórios de avaliação são versionados de propósito (evidência de docs/evaluation.md);
+# apenas o banco temporário da execução é ignorado.
+evals/results/*.db
+
+# Modelos baixados
+models/
+
+# IDE
+.vscode/
+.idea/
+*.swp
