@@ -1,4 +1,4 @@
-"""Aprovação humana e execução idempotente — operação da aplicação, fora do LLM.
+"""Aprovação humana e execução idempotente: operação da aplicação, fora do LLM.
 
 Garantias:
 - A aprovação é vinculada ao hash exato do conteúdo, ao usuário e a um prazo.

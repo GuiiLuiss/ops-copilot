@@ -23,7 +23,7 @@ ABOUT_MD = """
   (hash). Editar a proposta revoga a aprovação; reexecutar não duplica.
 - **Autorização** por papel é aplicada no backend antes da recuperação; documentos restritos
   nunca entram no contexto de um analista.
-- Este ambiente **não** é um sistema em produção. Veja `docs/limitations.md`.
+- Este ambiente não é um sistema em produção. Limitações em `docs/limitations.md`.
 """
 
 _BADGE = {"answer_ready": "[OK]", "awaiting_approval": "[AGUARDANDO APROVAÇÃO]",
@@ -153,7 +153,7 @@ def render_history(user: User) -> None:
                                          "created_at")} for t in h["tasks"]],
                      width="stretch", hide_index=True)
     else:
-        st.caption("Nenhuma tarefa registrada - nada é escrito sem aprovação.")
+        st.caption("Nenhuma tarefa registrada. Tarefas só são criadas após aprovação.")
     st.subheader("Auditoria")
     if h["audit"]:
         st.dataframe(h["audit"], width="stretch", hide_index=True)

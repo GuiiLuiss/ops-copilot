@@ -51,7 +51,7 @@ def build_context(data: list[QueryOperationsOutput], hits: list[PolicyHit]) -> s
 def deterministic_answer(data: list[QueryOperationsOutput],
                          hits: list[PolicyHit], limitations: list[str]) -> str:
     """Resposta sem LLM: só números das ferramentas e trechos recuperados."""
-    out = ["**Modo determinístico (sem LLM)** — resposta montada diretamente das ferramentas.\n"]
+    out = ["**Modo determinístico (sem LLM):** resposta montada diretamente das ferramentas.\n"]
     if data:
         out.append("**Dados consultados**")
         for d in data:
@@ -102,7 +102,7 @@ def deterministic_answer(data: list[QueryOperationsOutput],
         out.append("\n**Políticas recuperadas**")
         for h in hits:
             snippet = h.text.split("\n", 1)[-1].strip().replace("\n", " ")[:220]
-            out.append(f"- [{h.chunk_id}] {h.title} v{h.version} — {h.section}: {snippet}…")
+            out.append(f"- [{h.chunk_id}] {h.title} v{h.version}, {h.section}: {snippet}…")
     if limitations:
         out.append("\n**Limitações**")
         out.extend(f"- {lim}" for lim in limitations)

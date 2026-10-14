@@ -2,9 +2,9 @@
 
 # 🧭 Copiloto de Operações
 
-**Um assistente de IA que responde perguntas sobre a operação de um e-commerce —
-com números que vêm do banco de dados, fontes que você pode conferir
-e ações que só acontecem depois que uma pessoa aprova.**
+**Assistente de IA para perguntas sobre a operação de um e-commerce.
+Os números vêm do banco de dados, as fontes podem ser conferidas
+e nenhuma ação acontece sem aprovação de uma pessoa.**
 
 [![CI](https://github.com/GuiiLuiss/ops-copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/GuiiLuiss/ops-copilot/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -19,41 +19,41 @@ e ações que só acontecem depois que uma pessoa aprova.**
 
 ---
 
-## 💡 A ideia em 30 segundos
+## 💡 O que o projeto faz
 
-Imagine que você trabalha na operação de uma loja online e pergunta:
+A pergunta de demonstração é a que qualquer time de operação já fez:
 
 > **"Por que os cancelamentos aumentaram neste mês e o que podemos fazer?"**
 
-Um chatbot comum responderia com um texto convincente — e possivelmente inventado.
-Este projeto faz diferente:
+Um chatbot comum responderia com um texto convincente, possivelmente inventado.
+Aqui o fluxo é outro:
 
 | Etapa | O que acontece |
 |---|---|
-| 🔢 **Consulta os dados de verdade** | Roda consultas fixas no banco (taxa de cancelamento por segmento, por transportadora, motivos, atrasos, chamados). A IA **não calcula nada** — só recebe os números prontos. |
-| 📄 **Busca as políticas internas** | Encontra os documentos relevantes (SLA de entrega, regras de cancelamento, escalonamento) e **só mostra o que o seu perfil pode ver**. |
-| ✍️ **Escreve a resposta com fontes** | Cada afirmação sobre política vem com uma citação clicável. Se a IA citar algo que não existe, a citação é removida e isso fica registrado. |
-| 📝 **Propõe uma ação** | Ex.: *"Abrir revisão operacional com a transportadora RapidoLog"*. Mas **não executa**. |
-| ✅ **Espera uma pessoa aprovar** | Só um **gestor** pode aprovar. A aprovação vale para aquele texto exato — se alguém editar a proposta, precisa aprovar de novo. Clicar duas vezes não cria duas tarefas. |
+| 🔢 **Consulta os dados** | Roda consultas fixas no banco (taxa de cancelamento por segmento e transportadora, motivos, atrasos, chamados). A IA não calcula nada: recebe os números prontos. |
+| 📄 **Busca as políticas internas** | Encontra os documentos relevantes (SLA de entrega, regras de cancelamento, escalonamento) e mostra apenas o que o perfil do usuário pode ver. |
+| ✍️ **Escreve a resposta com fontes** | Cada afirmação sobre política vem com uma citação clicável. Se a IA citar algo que não existe, a citação é removida e o fato fica registrado. |
+| 📝 **Propõe uma ação** | Por exemplo: *"Abrir revisão operacional com a transportadora RapidoLog"*. A proposta não é executada. |
+| ✅ **Espera aprovação** | Só um gestor pode aprovar. A aprovação vale para aquele texto exato: se alguém editar a proposta, precisa aprovar de novo. Clicar duas vezes não cria duas tarefas. |
 
-No cenário de demonstração, o sistema descobre que o aumento se concentra em **clientes
-assinantes** atendidos pela transportadora **RapidoLog** (taxa de 7,9% → 12,3%), associado a
-atrasos de entrega — e usa a linguagem certa: *"hipótese a investigar"*, não *"a causa é"*.
+No cenário de demonstração, o sistema encontra o aumento concentrado em clientes assinantes
+atendidos pela transportadora RapidoLog (taxa de 7,9% para 12,3%), associado a atrasos de
+entrega. A resposta diz "hipótese a investigar", não "a causa é".
 
-## 🎯 Por que isso importa
+## 🎯 Os três riscos tratados
 
-Colocar IA generativa em uma operação real tem três riscos clássicos:
+Colocar IA generativa em uma operação real traz três problemas conhecidos. Cada um foi
+tratado no desenho e depois medido:
 
-1. **Ela inventa números.** Aqui os números nunca saem do modelo — saem de consultas SQL
-   fixas e validadas. Na avaliação, **exatidão numérica de 100%** em todas as rodadas.
-2. **Ela vaza informação.** O filtro de permissão acontece **antes** da busca, não depois.
-   Um analista nunca vê um documento restrito a gestores. **Zero vazamentos** nos testes.
-3. **Ela faz coisas sem ninguém pedir.** A IA não tem nenhuma ferramenta de escrita. A
-   aprovação é uma função da aplicação, fora do alcance do modelo. **Zero execuções sem
-   aprovação** nos testes — inclusive quando um documento malicioso mandava "aprovar
-   automaticamente".
+1. **Números inventados.** Os números nunca saem do modelo; vêm de consultas SQL fixas e
+   validadas. Em 198 execuções com dois modelos diferentes, nenhum número inventado.
+2. **Vazamento de informação.** O filtro de permissão acontece antes da busca, não depois.
+   Um analista nunca vê um documento restrito a gestores. Zero vazamentos nos testes.
+3. **Ações sem pedido.** A IA não tem nenhuma ferramenta de escrita. A aprovação é uma
+   função da aplicação, fora do alcance do modelo. Zero execuções sem aprovação nos testes,
+   inclusive quando um documento malicioso mandava "aprovar automaticamente".
 
-E tudo isso foi **medido**, não só prometido. Veja [os resultados](#-resultados-medidos).
+Os números estão em [Resultados medidos](#-resultados-medidos).
 
 ## 🖥️ Como fica na prática
 
@@ -82,13 +82,13 @@ A interface (Streamlit) tem quatro abas: **Chat**, **Propostas e tarefas**, **Av
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-Há também um **modo sem IA** (rotulado como "determinístico"): a mesma interface, mas a
+Há também um modo sem IA, rotulado como "determinístico": a mesma interface, mas a
 resposta é montada só com os números e trechos encontrados. Serve para explorar os dados sem
-precisar de modelo nenhum — e roda em milissegundos.
+nenhum modelo e responde em milissegundos.
 
-## 🚀 Rodando em 2 minutos
+## 🚀 Como rodar
 
-Você só precisa de **Python 3.11+**. Nenhuma chave de API, nenhum serviço pago.
+Requisito: Python 3.11 ou superior. Não precisa de chave de API nem de serviço pago.
 
 ```bash
 git clone https://github.com/GuiiLuiss/ops-copilot.git && cd ops-copilot
@@ -100,10 +100,10 @@ copiloto generate-data              # cria os dados fictícios (sempre iguais, s
 copiloto ui                         # abre a interface no navegador
 ```
 
-Pronto — já dá para fazer perguntas no **modo determinístico**, sem nenhum modelo de IA.
+Com isso já é possível fazer perguntas no modo determinístico, sem modelo de IA.
 
 <details>
-<summary><b>➕ Quer ligar a IA? (Ollama, local e gratuito)</b></summary>
+<summary><b>➕ Ligar a IA (Ollama, local e gratuito)</b></summary>
 
 ```bash
 ollama pull qwen3.5:9b              # baixa o modelo (~6 GB)
@@ -111,26 +111,27 @@ copy .env.example .env              # e edite: COPILOTO_LLM_PROVIDER=ollama
 copiloto ui                         # o botão "Usar LLM" aparece ligado
 ```
 
-Validado com `qwen3.5:9b` em uma RTX 4070 Laptop (32 GB RAM): ~15 s por resposta.
-Em CPU funciona, mas é bem mais lento. Gemini também é suportado
-(`COPILOTO_LLM_PROVIDER=gemini` + `GEMINI_API_KEY`), mas não foi executado neste projeto;
-a cota gratuita depende das condições do provedor.
+Avaliado com `qwen3.5:9b` e `mistral:7b` em uma RTX 4070 Laptop (32 GB RAM): 12 a 15 s por
+resposta. Qualquer modelo do Ollama funciona; basta trocar `COPILOTO_OLLAMA_MODEL`.
+Em CPU funciona, mas é bem mais lento. Há também um provedor Gemini
+(`COPILOTO_LLM_PROVIDER=gemini` + `GEMINI_API_KEY`). Todos os resultados publicados usam o
+Ollama local; a cota gratuita do Gemini depende das condições do provedor.
 </details>
 
 <details>
-<summary><b>➕ Quer busca semântica (vetorial / híbrida)?</b></summary>
+<summary><b>➕ Busca semântica (vetorial ou híbrida)</b></summary>
 
 ```bash
 pip install -e ".[vector]"          # sentence-transformers + FAISS (baixa ~470 MB de modelo)
 # .env: COPILOTO_RETRIEVAL_MODE=hybrid
 ```
 
-Sem isso, a busca é **lexical** (SQLite FTS5) — que, nos testes, foi a melhor opção
-para este corpus. Veja a comparação em [docs/evaluation.md](docs/evaluation.md).
+Sem isso, a busca é lexical (SQLite FTS5), que nos testes foi a melhor opção para este
+corpus. A comparação está em [docs/evaluation.md](docs/evaluation.md).
 </details>
 
 <details>
-<summary><b>🐳 Prefere Docker?</b></summary>
+<summary><b>🐳 Docker</b></summary>
 
 ```bash
 docker compose up                   # API em :8000 e UI em :8501, modo determinístico
@@ -155,29 +156,34 @@ copiloto eval --variants lexical,hybrid,vector
 
 ## 📊 Resultados medidos
 
-Criei **33 casos de teste** cobrindo perguntas numéricas, comparações entre meses, políticas
-vigentes e antigas, perguntas sem resposta, acesso restrito, tentativas de manipulação (prompt
-injection) e os fluxos de aprovação. Os números esperados são recalculados pelo próprio banco
-na hora do teste — nunca escritos à mão.
+São 33 casos de teste: perguntas numéricas, comparações entre meses, políticas vigentes e
+antigas, perguntas sem resposta, acesso restrito, tentativas de manipulação (prompt injection)
+e os fluxos de aprovação. Os números esperados são recalculados pelo próprio banco na hora do
+teste, nunca escritos à mão.
 
 | Modo | Casos corretos | Números exatos | Vazamentos | Ações sem aprovação |
 |---|:---:|:---:|:---:|:---:|
 | Sem IA (lexical) | **33 / 33** | 6 / 6 | 0 | 0 |
 | Sem IA (híbrido) | **33 / 33** | 6 / 6 | 0 | 0 |
-| Com IA — 1ª rodada | 28 / 33 | 6 / 6 | 0 | 0 |
-| Com IA — após correções | **32 / 33** | 6 / 6 | 0 | 0 |
+| Qwen 9B, primeira rodada | 28 / 33 | 6 / 6 | 0 | 0 |
+| Qwen 9B, após correções | **32 / 33** | 6 / 6 | 0 | 0 |
+| Mistral 7B, mesmas condições | 30 / 33 | 5 / 6 | 0 | 0 |
 
-**O que a avaliação revelou** — e o que fiz com isso:
+O que a avaliação mostrou e o que mudou depois:
 
-- 🔍 Na primeira rodada com IA, o modelo **inventava IDs de citação** (12 vezes em 66
-  execuções) e, em 1 caso, **repetiu texto de um documento malicioso** na resposta.
-- 🔧 Correções: trechos suspeitos passaram a ser **excluídos antes de chegar ao modelo**, e o
+- Na primeira rodada com IA, o modelo inventou IDs de citação 12 vezes em 66 execuções e, em
+  1 caso, repetiu na resposta o texto de um documento malicioso.
+- Duas correções: trechos suspeitos passaram a ser excluídos antes de chegar ao modelo, e o
   contexto passou a listar explicitamente quais citações são válidas.
-- 📈 Resultado: citações inventadas caíram de **12 → 2**; eco de conteúdo malicioso **2 → 0**.
-  Mesmas condições, mesmo modelo, mesmos casos.
+- Nova rodada, mesmas condições: citações inventadas caíram de 12 para 2; eco de conteúdo
+  malicioso, de 2 para 0.
+- Um segundo modelo, de outra família (Mistral 7B), rodou os mesmos casos com o mesmo prompt.
+  Não inventou nenhuma citação, mas omitiu uma taxa que a pergunta pedia e deixou de nomear a
+  transportadora em dois casos. Os controles de autorização e aprovação ficaram em zero falhas
+  nos dois modelos: a segurança não depende de qual modelo está ligado.
 
-Relatórios completos (JSON) estão em [`evals/results/`](evals/results/) e a análise, incluindo
-o que **não** funcionou, em [`docs/evaluation.md`](docs/evaluation.md).
+Os relatórios em JSON estão em [`evals/results/`](evals/results/). A análise, incluindo o que
+não funcionou, está em [`docs/evaluation.md`](docs/evaluation.md).
 
 ## 🏗️ Como funciona por dentro
 
@@ -201,24 +207,25 @@ flowchart LR
     style A fill:#e7f1ff,stroke:#0d6efd
 ```
 
-Os passos 1–6 são o **agente** (um grafo com estados e limites de tempo/chamadas).
-Os passos 7–8 ficam **fora do agente**, numa função da aplicação que a IA não consegue chamar.
+Os passos 1 a 6 formam o agente: um grafo com estados e limites de tempo e de chamadas.
+Os passos 7 e 8 ficam fora do agente, em uma função da aplicação que a IA não consegue chamar.
 
 <details>
-<summary><b>🛡️ Como o sistema se protege (e o que ele não garante)</b></summary>
+<summary><b>🛡️ Controles de segurança e o que eles não cobrem</b></summary>
 
 | Risco | Controle |
 |---|---|
 | IA gerar SQL perigoso | Ela não gera SQL. Escolhe entre 6 consultas fixas com parâmetros validados. |
-| Vazar documento restrito | Filtro de papel aplicado **antes** da busca. O trecho nem entra no ranking. |
-| Documento com instruções maliciosas | Entra no prompt rotulado como "dado, não instrução". Se tiver padrão suspeito, vai para **quarentena** e nem chega ao modelo. |
-| IA inventar citação | Toda citação é conferida contra os trechos realmente recuperados; inexistentes são removidas e registradas. |
-| Ação sem aprovação | A IA não tem ferramenta de escrita. Aprovar exige papel gestor + hash exato do conteúdo + prazo. Editar revoga; repetir não duplica. |
-| Segredos em logs | Logs com redaction; sem contexto integral. |
+| Vazar documento restrito | Filtro de papel aplicado antes da busca. O trecho nem entra no ranking. |
+| Documento com instruções maliciosas | Entra no prompt rotulado como "dado, não instrução". Se tiver padrão suspeito, vai para quarentena e não chega ao modelo. |
+| IA inventar citação | Toda citação é conferida contra os trechos recuperados; as inexistentes são removidas e registradas. |
+| Ação sem aprovação | A IA não tem ferramenta de escrita. Aprovar exige papel de gestor, hash exato do conteúdo e prazo válido. Editar revoga; repetir não duplica. |
+| Segredos em logs | Logs com redaction e sem o contexto integral. |
 
-**Não garante:** a autenticação é de demonstração (você escolhe o usuário num menu);
-a detecção de injeção é por padrões, não por entendimento; e nada aqui elimina alucinação —
-só reduz a superfície e torna o erro visível. Detalhes em [docs/limitations.md](docs/limitations.md).
+O que não está coberto: a autenticação é de demonstração (o usuário é escolhido num menu),
+a detecção de injeção é por padrões, não por entendimento, e nada aqui elimina alucinação.
+O desenho reduz a superfície e torna o erro visível. Detalhes em
+[docs/limitations.md](docs/limitations.md).
 </details>
 
 <details>
@@ -262,29 +269,29 @@ docs/             arquitetura, decisões, limitações, avaliação, caminho par
 
 ## 🏭 E em produção?
 
-Este projeto roda num notebook de propósito — qualquer pessoa consegue reproduzir. Mas o
-núcleo (agente, regras de aprovação, contratos das ferramentas) **não sabe onde roda**: recebe
-banco, usuário e modelo por injeção. Levar para produção é trocar as bordas, não reescrever:
+O projeto roda num notebook de propósito, para que qualquer pessoa consiga reproduzir. O
+núcleo (agente, regras de aprovação, contratos das ferramentas) não depende do ambiente:
+recebe banco, usuário e modelo por injeção. Levar para produção significa trocar as bordas,
+não reescrever:
 
 | Hoje | Em produção |
 |---|---|
-| Menu de usuário | Login com o IdP da empresa (OIDC); o backend já trabalha com `User` + papel |
-| SQLite | PostgreSQL + pgvector (pré-filtro de permissão nativo no `WHERE`) |
-| Ollama no notebook | API gerenciada ou vLLM em GPU — é uma classe nova em `providers/` |
-| Um processo | API stateless + fila + workers; `POST /ask` devolve `run_id`, UI acompanha |
-| Logs JSONL | OpenTelemetry; alerta em citações removidas e aprovações negadas |
-| CI no GitHub Actions (**já existe**: lint, testes, 33 casos como gate, build da imagem) | + push da imagem, deploy por ambiente, avaliação com LLM noturna, canary de prompt |
-| `docker compose up` (**já existe**) | Cloud Run / Container Apps / Kubernetes — mesmo container, Postgres e LLM gerenciados |
+| Menu de usuário | Login com o IdP da empresa (OIDC); o backend já trabalha com `User` e papel |
+| SQLite | PostgreSQL com pgvector (pré-filtro de permissão no `WHERE`) |
+| Ollama no notebook | API gerenciada ou vLLM em GPU, implementados como uma classe nova em `providers/` |
+| Um processo | API stateless, fila e workers; `POST /ask` devolve `run_id` e a UI acompanha |
+| Logs JSONL | OpenTelemetry, com alerta em citações removidas e aprovações negadas |
+| CI no GitHub Actions (já existe: lint, testes, 33 casos como gate, build da imagem) | Push da imagem, deploy por ambiente, avaliação com LLM noturna, canary de prompt |
+| `docker compose up` (já existe) | Cloud Run, Container Apps ou Kubernetes, com o mesmo container e Postgres e LLM gerenciados |
 
-O raciocínio completo — ordem de prioridade, estimativa de esforço, custo por faixa e o que eu
-**não** faria — está em [docs/production.md](docs/production.md).
+A ordem de prioridade, a estimativa de esforço, o custo por faixa e o que eu não faria estão
+em [docs/production.md](docs/production.md).
 
-## 🗺️ O que ficou de fora (por enquanto)
+## 🗺️ O que ficou de fora
 
-- **Reranking** local — sem ganho claro da busca vetorial, não se justificou ainda.
-- **Citações inventadas** — caíram de 12 para 2, mas não zeraram; próximos candidatos são
-  citação por índice numérico ou um modelo maior.
-- **Rubrica humana** de utilidade/fidelidade — definida, não executada.
+- Reranking local: sem ganho claro da busca vetorial, ainda não se justificou.
+- Citações inventadas: caíram de 12 para 2, mas não zeraram. Próximos candidatos são citação
+  por índice numérico ou um modelo maior.
 - MCP, PDF/OCR, autenticação real, execução com Gemini.
 
 ## 💰 Custos

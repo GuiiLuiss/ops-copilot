@@ -1,8 +1,8 @@
-# Limitações e o que este projeto NÃO é
+# Limitações
 
 ## Não é um sistema em produção
 
-> O caminho até produção — o que muda, em que ordem, com que esforço e custo — está em
+> O caminho até produção (o que muda, em que ordem, com que esforço e custo) está em
 > [`production.md`](production.md). Esta seção lista só o que falta hoje.
 
 - **Autenticação de demonstração.** A seleção de usuário na interface e o header `X-Demo-User`
@@ -25,8 +25,8 @@
 
 - **Planner por regras.** Perguntas fora dos padrões caem em `insufficient` mesmo quando um
   humano saberia qual consulta fazer.
-- **Validação de citações** só garante que o ID citado existe entre os chunks recuperados —
-  não que o trecho sustenta a afirmação (fidelidade). Fidelidade exige rubrica humana.
+- **Validação de citações** só garante que o ID citado existe entre os chunks recuperados,
+  não que o trecho sustenta a afirmação. Isso foi conferido na leitura manual das respostas.
 - **Detecção de prompt injection por padrões** é complementar. A defesa principal é
   estrutural: o LLM não tem ferramenta de escrita, a aprovação está fora dele e a autorização
   é pré-filtro.
@@ -37,7 +37,7 @@
 - Corpus pequeno (12 documentos, ~50 chunks). Resultados de lexical vs híbrido **não
   generalizam** para corpora grandes.
 - Modelo de embeddings multilíngue genérico; sem fine-tuning.
-- Reranking não implementado.
+- Sem reranking: a busca vetorial não trouxe ganho que o justificasse.
 - Sem cache de respostas (decisão: evitar compartilhamento indevido entre papéis).
 
 ## Avaliação
@@ -45,9 +45,9 @@
 - 33 casos é uma amostra pequena. Percentis só são reportados com n ≥ 5 e não devem ser
   lidos como SLA.
 - Checks automáticos cobrem exatidão numérica, recall de documentos, precisão de citações,
-  autorização, aprovação e injeção. **Utilidade e fidelidade** exigem rubrica humana e não
-  estão automatizadas.
-- LLM-as-judge não foi usado.
+  autorização, aprovação e injeção. Utilidade e fidelidade foram avaliadas por leitura manual,
+  sem pontuação formal.
+- Não se usou outro modelo como juiz das respostas.
 - Uma repetição por variante; sem intervalo de confiança.
 
 ## Custos
@@ -59,18 +59,21 @@
 
 Após a iteração v1.3 → v1.4 (ver `evaluation.md`):
 
-- **Resolvido**: eco de texto de documento malicioso — chunks sinalizados agora ficam em
+- **Resolvido**: eco de texto de documento malicioso. Chunks sinalizados agora ficam em
   quarentena e não chegam ao LLM (0 ocorrências em 66 execuções).
-- **Reduzido, não eliminado**: o modelo `qwen3.5:9b` ainda **inventa IDs de chunk**
-  ocasionalmente (12 → 2 em 66 execuções) mesmo com a lista explícita de citações permitidas.
-  A validação remove, mas a afirmação fica sem referência. Próximas opções: citação por índice
-  numérico, modelo maior, ou segunda passagem de reparo (com limite de 1).
-- **Omissão** de rótulos presentes no contexto ocorre esporadicamente (1 em 66).
+- **Reduzido, não eliminado**: o modelo `qwen3.5:9b` ainda inventa IDs de chunk
+  ocasionalmente (de 12 para 2 em 66 execuções), mesmo com a lista explícita de citações
+  permitidas. A validação remove, mas a afirmação fica sem referência. Próximas opções:
+  citação por índice numérico, modelo maior, ou uma segunda passagem de reparo (limitada a 1).
+- **Omissão** de rótulos presentes no contexto ocorre esporadicamente (1 em 66 com o Qwen).
+  Com o `mistral:7b` a omissão é o erro dominante: 4 em 66, incluindo uma taxa que a pergunta
+  pedia e o nome da transportadora. Em compensação, o Mistral não inventou nenhuma citação.
+  O perfil de erro muda com o modelo; os controles de autorização e aprovação não.
 - A detecção de injeção continua baseada em padrões; a quarentena só protege contra o que
   o detector reconhece. A defesa estrutural (sem ferramenta de escrita, aprovação fora do LLM)
   é o que vale para o resto.
 
-## Planejado, não implementado
+## Fora do escopo desta versão
 
 - Reranking local com medição de latência.
 - Exposição das ferramentas via MCP.

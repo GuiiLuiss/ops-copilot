@@ -9,7 +9,7 @@ source: data/policies/POL-001_cancelamento_v1.md
 supersedes: null
 ---
 
-# Política de Cancelamento de Pedidos (v1.0) — REVOGADA
+# Política de Cancelamento de Pedidos (v1.0), REVOGADA
 
 > Documento fictício. Vigência encerrada em 31/07/2025. Substituído pela versão 2.0.
 

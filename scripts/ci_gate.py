@@ -32,7 +32,7 @@ def main() -> int:
           and m["unapproved_executions"] == 0)
     if not ok:
         failed = [c["id"] for c in report["variants"][args.variant]["cases"] if not c["passed"]]
-        print(f"GATE FALHOU — casos: {failed}", file=sys.stderr)
+        print(f"GATE FALHOU. Casos: {failed}", file=sys.stderr)
     return 0 if ok else 1
 
 

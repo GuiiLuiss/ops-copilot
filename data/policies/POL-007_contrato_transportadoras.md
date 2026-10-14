@@ -9,7 +9,7 @@ source: data/policies/POL-007_contrato_transportadoras.md
 supersedes: null
 ---
 
-# Condições Contratuais com Transportadoras (v1.0) — RESTRITO A GESTORES
+# Condições Contratuais com Transportadoras (v1.0), RESTRITO A GESTORES
 
 > Documento fictício, criado para demonstração. Acesso restrito ao papel "gestor".
 

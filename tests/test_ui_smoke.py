@@ -20,7 +20,7 @@ def at(monkeypatch, tmp_path, synthetic_db):
 
 
 def test_ui_loads_with_demo_warning(at):
-    assert any("NÃO é autenticação segura" in w.value for w in at.warning)
+    assert any("não é autenticação" in w.value for w in at.warning)
     assert any("determinístico" in m.value for m in at.markdown)
 
 

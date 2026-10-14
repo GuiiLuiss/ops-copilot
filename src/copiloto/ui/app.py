@@ -32,7 +32,7 @@ llm_ok, llm_msg = provider.is_available() if provider else (False, "COPILOTO_LLM
 with st.sidebar:
     st.header("Copiloto de Operações")
     st.warning("**Demonstração local com dados sintéticos.** A seleção de usuário abaixo "
-               "NÃO é autenticação segura.")
+               "não é autenticação; serve só para trocar de papel na demo.")
     user_id = st.selectbox("Usuário (modo demo)", list(DEMO_USERS),
                            format_func=lambda u: DEMO_USERS[u].name)
     user = get_user(user_id)
