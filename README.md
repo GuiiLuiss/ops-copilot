@@ -243,7 +243,7 @@ src/copiloto/
 data/policies/    12 documentos fictícios (+2 maliciosos de teste)
 data/synthetic/   CSVs e banco gerados com seed fixa
 evals/            33 casos versionados + relatórios reais
-docs/             arquitetura, decisões, limitações, avaliação, roteiro de vídeo
+docs/             arquitetura, decisões, limitações, avaliação
 ```
 </details>
 
