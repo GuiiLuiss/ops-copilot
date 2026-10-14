@@ -243,9 +243,27 @@ src/copiloto/
 data/policies/    12 documentos fictícios (+2 maliciosos de teste)
 data/synthetic/   CSVs e banco gerados com seed fixa
 evals/            33 casos versionados + relatórios reais
-docs/             arquitetura, decisões, limitações, avaliação
+docs/             arquitetura, decisões, limitações, avaliação, caminho para produção
 ```
 </details>
+
+## 🏭 E em produção?
+
+Este projeto roda num notebook de propósito — qualquer pessoa consegue reproduzir. Mas o
+núcleo (agente, regras de aprovação, contratos das ferramentas) **não sabe onde roda**: recebe
+banco, usuário e modelo por injeção. Levar para produção é trocar as bordas, não reescrever:
+
+| Hoje | Em produção |
+|---|---|
+| Menu de usuário | Login com o IdP da empresa (OIDC); o backend já trabalha com `User` + papel |
+| SQLite | PostgreSQL + pgvector (pré-filtro de permissão nativo no `WHERE`) |
+| Ollama no notebook | API gerenciada ou vLLM em GPU — é uma classe nova em `providers/` |
+| Um processo | API stateless + fila + workers; `POST /ask` devolve `run_id`, UI acompanha |
+| Logs JSONL | OpenTelemetry; alerta em citações removidas e aprovações negadas |
+| Rodar `copiloto eval` à mão | Os 33 casos viram gate de CI; avaliação com LLM roda à noite |
+
+O raciocínio completo — ordem de prioridade, estimativa de esforço, custo por faixa e o que eu
+**não** faria — está em [docs/production.md](docs/production.md).
 
 ## 🗺️ O que ficou de fora (por enquanto)
 

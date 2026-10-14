@@ -2,6 +2,9 @@
 
 ## Não é um sistema em produção
 
+> O caminho até produção — o que muda, em que ordem, com que esforço e custo — está em
+> [`production.md`](production.md). Esta seção lista só o que falta hoje.
+
 - **Autenticação de demonstração.** A seleção de usuário na interface e o header `X-Demo-User`
   na API identificam o papel, mas não autenticam ninguém. Para uso externo é necessário
   autenticação real (OIDC, sessão, etc.) e o backend já recebe o `User` de forma desacoplada.
