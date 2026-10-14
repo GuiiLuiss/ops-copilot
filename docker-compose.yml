@@ -1,0 +1,55 @@
+# Sobe API + UI com um comando. Ollama é opcional (perfil "llm").
+#
+#   docker compose up                       # API em :8000, UI em :8501, modo determinístico
+#   docker compose --profile llm up         # + Ollama em :11434 (baixe o modelo uma vez:
+#                                           #   docker compose exec ollama ollama pull qwen3.5:9b)
+#
+# Nota: o banco sintético é gerado na build da imagem. Propostas e tarefas aprovadas
+# ficam no volume "copiloto-data"; apague-o para recomeçar do zero.
+
+services:
+  api:
+    build: .
+    image: ops-copilot:local
+    ports: ["8000:8000"]
+    environment:
+      COPILOTO_LLM_PROVIDER: ${COPILOTO_LLM_PROVIDER:-none}
+      COPILOTO_OLLAMA_BASE_URL: http://ollama:11434
+      COPILOTO_OLLAMA_MODEL: ${COPILOTO_OLLAMA_MODEL:-qwen3.5:9b}
+      COPILOTO_RETRIEVAL_MODE: ${COPILOTO_RETRIEVAL_MODE:-lexical}
+      COPILOTO_DB_PATH: /data/copiloto.db
+    volumes:
+      - copiloto-data:/data
+    # Copia o banco gerado na build para o volume na primeira subida
+    entrypoint: ["sh", "-c", "[ -f /data/copiloto.db ] || cp data/synthetic/copiloto.db /data/; exec uvicorn copiloto.api.app:app --host 0.0.0.0 --port 8000"]
+
+  ui:
+    image: ops-copilot:local
+    depends_on: [api]
+    ports: ["8501:8501"]
+    environment:
+      COPILOTO_LLM_PROVIDER: ${COPILOTO_LLM_PROVIDER:-none}
+      COPILOTO_OLLAMA_BASE_URL: http://ollama:11434
+      COPILOTO_OLLAMA_MODEL: ${COPILOTO_OLLAMA_MODEL:-qwen3.5:9b}
+      COPILOTO_RETRIEVAL_MODE: ${COPILOTO_RETRIEVAL_MODE:-lexical}
+      COPILOTO_DB_PATH: /data/copiloto.db
+    volumes:
+      - copiloto-data:/data
+    command: ["python", "-m", "streamlit", "run", "src/copiloto/ui/app.py",
+              "--server.address", "0.0.0.0", "--server.port", "8501", "--server.headless", "true"]
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: [llm]
+    ports: ["11434:11434"]
+    volumes:
+      - ollama-models:/root/.ollama
+    # Para GPU NVIDIA, descomente:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+
+volumes:
+  copiloto-data:
+  ollama-models:

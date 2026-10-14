@@ -115,16 +115,61 @@ para armazenamento imutável (WORM) por exigência de auditoria.
 - Revisão de LGPD: dados reais de clientes exigem base legal, minimização (o agente só
   recebe agregados, nunca linhas individuais — já é assim) e política de retenção dos logs.
 
-### 8. Entrega e operação
+### 8. CI/CD — o que já existe e o que falta
 
-- CI: `pytest` + `ruff` + `pylint` + `copiloto eval` (modo determinístico) a cada PR.
-  Falha se qualquer caso de autorização ou aprovação regredir.
-- CD: imagem Docker, deploy por ambiente (dev → staging → prod), migrações de banco versionadas
-  (Alembic).
-- Avaliação com LLM roda **noturna**, não no PR (custo e tempo), e publica o relatório.
-  Qualquer queda em "citações inventadas" ou "eco malicioso" abre incidente.
+**Já implementado neste repositório:**
+
+- [`.github/workflows/ci.yml`](../.github/workflows/ci.yml) roda a cada push e PR, em
+  Python 3.11 e 3.12: `ruff` → `pylint --fail-under=10` → `pytest` → `copiloto eval` em modo
+  determinístico → **gate** (`scripts/ci_gate.py`): o build falha se qualquer um dos 33 casos
+  regredir ou se houver uma violação de autorização ou execução sem aprovação. O relatório
+  JSON é publicado como artefato.
+- Em seguida, a imagem Docker é construída (sem push) para garantir que o `Dockerfile` não
+  quebrou.
+- [`Dockerfile`](../Dockerfile): imagem única, usuário sem privilégios, banco sintético gerado
+  na build, healthcheck em `/health`. [`docker-compose.yml`](../docker-compose.yml) sobe API +
+  UI com um comando e Ollama como perfil opcional.
+
+**O que faltaria para CD de verdade:**
+
+- Push da imagem para um registry (GHCR, ECR, ACR) com tag = SHA do commit, em `main`.
+- Deploy por ambiente (dev → staging → prod) disparado por tag ou aprovação manual no
+  workflow (`environment:` com *required reviewers* no GitHub).
+- Migrações de banco versionadas (Alembic) rodando antes do deploy.
+- Avaliação **com LLM** em workflow noturno (`schedule:`), não no PR — custo e tempo. O
+  relatório vai para um bucket e um job compara com o anterior; queda em "citações
+  inventadas" ou "eco malicioso" abre issue automaticamente.
 - Canary: nova versão de prompt ou modelo recebe 10% do tráfego com comparação de métricas
-  antes de 100%.
+  antes de 100%. `PROMPT_VERSION` e `index_version` já ficam no rastreio de cada execução,
+  então a comparação é um `GROUP BY`.
+
+### 9. Nuvem — onde rodar
+
+A aplicação é um container stateless + Postgres + endpoint de LLM. Isso cabe em qualquer
+nuvem; a escolha é de operação, não de arquitetura.
+
+| Opção | Quando escolher | O que o projeto já tem para isso |
+|---|---|---|
+| **Serverless de containers** — Cloud Run, Azure Container Apps, AWS App Runner | Começar rápido, volume variável, time pequeno. Escala a zero fora do horário. | `Dockerfile` pronto; healthcheck; config 100% por variável de ambiente. |
+| **ECS Fargate / Azure Container Instances** | Já há padrão corporativo em AWS/Azure; precisa de VPC privada e IAM fino. | Idem; adicionar task definition / bicep. |
+| **Kubernetes** (EKS, AKS, GKE) | Já existe cluster e plataforma interna; precisa de GPU para inferência própria (vLLM). | Imagem + compose servem de base para Helm chart; workers e API são deployments separados. |
+
+Peças gerenciadas ao redor, em qualquer opção:
+
+- **Banco:** RDS/Cloud SQL/Azure Database for PostgreSQL com extensão `pgvector`.
+- **Segredos:** Secrets Manager / Key Vault / Secret Manager, injetados como env vars.
+- **Fila:** SQS / Service Bus / Pub/Sub para desacoplar `POST /ask` dos workers.
+- **LLM:** Bedrock / Azure OpenAI / Vertex AI, ou vLLM em nó GPU no cluster.
+- **Observabilidade:** CloudWatch / Azure Monitor / Cloud Logging recebendo OpenTelemetry.
+- **Rede:** API atrás de gateway com WAF; banco e LLM em sub-rede privada; UI só fala com a API.
+
+Se eu tivesse que escolher hoje para um piloto interno: **Cloud Run ou Container Apps + Postgres
+gerenciado + LLM gerenciado**. Menor custo fixo, deploy em minutos, e nada do núcleo muda. Migrar
+para Kubernetes depois é mover o mesmo container.
+
+**Infraestrutura como código:** Terraform ou Bicep para os recursos acima, no mesmo
+repositório, em `infra/`. Não está incluído aqui porque exigiria uma conta em nuvem para
+validar — e o critério deste projeto foi não publicar nada que não tenha sido executado.
 
 ## O que eu faria primeiro
 

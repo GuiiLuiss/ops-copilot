@@ -6,6 +6,7 @@
 com números que vêm do banco de dados, fontes que você pode conferir
 e ações que só acontecem depois que uma pessoa aprova.**
 
+[![CI](https://github.com/GuiiLuiss/ops-copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/GuiiLuiss/ops-copilot/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Tests](https://img.shields.io/badge/testes-54%20passando-success)](tests/)
 [![Pylint](https://img.shields.io/badge/pylint-10.00%2F10-brightgreen)](.pylintrc)
@@ -126,6 +127,17 @@ pip install -e ".[vector]"          # sentence-transformers + FAISS (baixa ~470 
 
 Sem isso, a busca é **lexical** (SQLite FTS5) — que, nos testes, foi a melhor opção
 para este corpus. Veja a comparação em [docs/evaluation.md](docs/evaluation.md).
+</details>
+
+<details>
+<summary><b>🐳 Prefere Docker?</b></summary>
+
+```bash
+docker compose up                   # API em :8000 e UI em :8501, modo determinístico
+docker compose --profile llm up     # + Ollama como serviço (depois: docker compose exec ollama ollama pull qwen3.5:9b)
+```
+
+A imagem já sobe com o banco sintético gerado e um healthcheck em `/health`.
 </details>
 
 <details>
@@ -260,7 +272,8 @@ banco, usuário e modelo por injeção. Levar para produção é trocar as borda
 | Ollama no notebook | API gerenciada ou vLLM em GPU — é uma classe nova em `providers/` |
 | Um processo | API stateless + fila + workers; `POST /ask` devolve `run_id`, UI acompanha |
 | Logs JSONL | OpenTelemetry; alerta em citações removidas e aprovações negadas |
-| Rodar `copiloto eval` à mão | Os 33 casos viram gate de CI; avaliação com LLM roda à noite |
+| CI no GitHub Actions (**já existe**: lint, testes, 33 casos como gate, build da imagem) | + push da imagem, deploy por ambiente, avaliação com LLM noturna, canary de prompt |
+| `docker compose up` (**já existe**) | Cloud Run / Container Apps / Kubernetes — mesmo container, Postgres e LLM gerenciados |
 
 O raciocínio completo — ordem de prioridade, estimativa de esforço, custo por faixa e o que eu
 **não** faria — está em [docs/production.md](docs/production.md).
