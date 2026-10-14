@@ -306,7 +306,10 @@ em [docs/production.md](docs/production.md).
 - Números fora do gabarito: os testes conferem só os números que cada caso define. Uma
   leitura manual encontrou um valor secundário atribuído à transportadora errada; conferir
   todos os números da resposta contra as tabelas é o próximo passo da avaliação.
-- MCP, PDF/OCR, autenticação real, execução com Gemini.
+- Integração com ferramentas de tarefas: hoje a tarefa aprovada fica em uma tabela local.
+  Criá-la no Jira, no Monday ou em outro sistema (via API ou MCP) é uma troca em
+  `approval.execute`, o único ponto que grava tarefas. A aprovação continua fora do agente.
+- PDF/OCR, autenticação real, execução com Gemini.
 
 ## 💰 Custos
 

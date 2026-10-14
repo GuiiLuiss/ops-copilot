@@ -72,6 +72,28 @@ Em qualquer rota: o agente já faz **duas** chamadas por pergunta com proposta. 
 proposta deveria ser gerada só sob demanda (botão "propor ação"), cortando custo pela metade
 nas perguntas exploratórias.
 
+### 4b. Destino da tarefa aprovada
+
+**Hoje:** `approval.execute` grava a tarefa na tabela local `tasks`, com chave de
+idempotência e registro de auditoria.
+**Em produção:** a tarefa vai para a ferramenta que o time já usa (Jira, Monday, Azure
+Boards, ServiceNow). Duas formas:
+
+| Forma | Como | Quando |
+|---|---|---|
+| **API REST da ferramenta** | `execute` chama o cliente da ferramenta no lugar do `INSERT`; a chave de idempotência vira o campo de deduplicação da API (ou uma busca por `proposal_id` antes de criar). | Uma ferramenta só, integração direta. |
+| **Servidor MCP** | O mesmo `execute` chama um servidor MCP que expõe `create_task`; trocar de ferramenta é trocar o servidor, sem tocar o código. | Várias ferramentas ou vontade de reaproveitar conectores existentes. |
+
+O que não muda: a chamada externa fica dentro de `execute`, que só roda depois de `decide`
+aprovar e que exige papel de gestor, hash exato e prazo válido. O agente continua sem
+ferramenta de escrita; o MCP, se usado, é chamado pela aplicação, não pelo modelo. Registrar
+o ID externo da tarefa na tabela local mantém a auditoria e permite reexecução segura: se
+a API externa falhar depois de criar, a segunda tentativa encontra o ID e não duplica.
+
+**Esforço:** pequeno a médio. A função tem 20 linhas; o trabalho é o cliente da ferramenta,
+o mapeamento de campos (área responsável → projeto, prioridade → prioridade) e o tratamento
+de falha parcial.
+
 
 ### 5. Serviço e escala
 
