@@ -19,7 +19,9 @@ Os pontos que importam, em uma leitura rápida:
   sistema assim pode cometer, e o desenho impede os três.
 - **O que ainda falha está escrito aqui**, não escondido. Um modelo ainda cita referências
   inexistentes em 2 de 66 execuções (a validação remove, mas a resposta perde a fonte); o
-  outro omite números ou nomes que a pergunta pedia.
+  outro omite números ou nomes que a pergunta pedia. E a leitura de uma resposta completa
+  encontrou um erro que os testes não pegam: um número secundário atribuído à transportadora
+  errada. Está documentado, com o que foi corrigido e o que ainda não foi.
 
 Todos os números vêm de execuções reais, guardadas em `evals/results/`. Qualquer pessoa pode
 rodar `copiloto eval` e obter os mesmos resultados. Os casos de teste estão em
@@ -38,7 +40,7 @@ permite comparar "antes" e "depois" com justiça.
 | Índice | `5ccb0ee294a4` (12 documentos, 50 chunks) |
 | Embeddings | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` |
 | LLM | `ollama/qwen3.5:9b` (principal) e `ollama/mistral:7b` (comparação); temperatura 0.1, `think=false`, `num_ctx=8192` |
-| Prompt | `v1.3` (primeira rodada) → `v1.4` (reavaliação) |
+| Prompt | `v1.3` (primeira rodada) → `v1.4` (reavaliação e Mistral) → `v1.5` (validação na proposta; sem nova rodada completa) |
 | Repetições | 1 por variante (sem intervalo de confiança) |
 | Cache | nenhum cache de respostas; embeddings cacheados em `.npz` após a 1ª carga |
 | Top-k | 5 (pool de 20 antes do filtro de autorização); RRF k=60 |
@@ -275,13 +277,45 @@ nos dois. Com 33 casos e 1 repetição por modelo, diferenças de 1 ou 2 casos n
 ordenar os modelos; o que dá para afirmar é que o perfil de erro muda com o modelo e que as
 garantias de segurança não mudam.
 
+## Achados fora do gabarito: o que uma leitura da resposta pegou
+
+Depois das rodadas acima, uma execução do cenário principal na interface (Qwen, prompt v1.4,
+38 s) produziu uma resposta com todos os números do gabarito corretos, e ainda assim com dois
+erros que a avaliação automática não detecta:
+
+1. **Número secundário errado.** A resposta dizia que a RapidoLog tinha "63,2% no prazo vs
+   80,0% anterior". Nos dados, a RapidoLog teve 47,4% em setembro; 63,2% é a EntregaBR; e
+   80,0% não existe em nenhuma consulta (o desempenho de agosto nem foi consultado nessa
+   execução). O modelo misturou linhas da tabela e completou com um valor que não estava no
+   contexto. Os checks só conferem os números que o caso define como esperados (taxa e
+   variação), então isso passou.
+2. **Citação inválida na proposta.** O texto da proposta trazia "(POL-003#s02)", sem
+   colchetes, apontando para um chunk que não foi recuperado. A validação de citações cobria
+   a resposta, não a proposta; e o padrão exigia colchetes. Além disso, chamou "atraso na
+   entrega" de segmento, quando é motivo.
+
+O que mudou (prompt v1.5):
+
+- O título e a descrição da proposta passam pela mesma validação da resposta, com um padrão
+  que reconhece IDs com ou sem colchetes. IDs fora do contexto são substituídos por "citação
+  removida", registrados no rastreio (`bad_citations`) e listados nas limitações. Teste
+  `test_llm_proposal_text_citations_validated` reproduz o caso.
+- O prompt da proposta passou a distinguir "segmento" de "motivo".
+- O erro de número secundário **não tem correção estrutural** nesta versão. O modelo tem
+  acesso a todos os números corretos e ainda assim confundiu linhas. Ampliar o gabarito para
+  todos os números da resposta exigiria extrair e conferir cada valor contra as tabelas, o que
+  está listado como próximo passo em `limitations.md`. Até lá, a interface mostra os dados
+  brutos das ferramentas logo abaixo da resposta, para conferência.
+
 ## O que a avaliação automática cobre e o que não cobre
 
-Os testes conferem o que dá para conferir por programa: se o número está lá, se a citação
-existe, se nada proibido apareceu, se nenhuma tarefa foi criada sem aprovação. Eles não julgam
-se a resposta é útil para quem perguntou nem se o trecho citado sustenta a afirmação com a
-nuance que uma pessoa perceberia. Essa leitura qualitativa foi feita manualmente durante a
-análise das falhas (é o que está nas seções "O que isso diz" acima), sem pontuação formal.
+Os testes conferem o que dá para conferir por programa: os números que o caso define como
+esperados, a existência das citações, a ausência de conteúdo proibido, a criação de tarefas
+só após aprovação. Eles não julgam se a resposta é útil para quem perguntou, não conferem
+números fora do gabarito (ver seção anterior) e não avaliam se o trecho citado sustenta a
+afirmação com a nuance que uma pessoa perceberia. As falhas registradas foram examinadas uma
+a uma para classificar a causa (omissão, invenção, formatação); essa classificação está nas
+seções acima, sem pontuação formal de utilidade.
 
 Também não foi usada a prática de pedir a outro modelo de IA que julgue as respostas ("LLM
 como juiz"). Um modelo avaliando outro não substitui a leitura humana e daria uma falsa

@@ -9,6 +9,8 @@ from copiloto.tools.contracts import PolicyHit, QueryOperationsOutput
 
 # Captura qualquer coisa com cara de citação, inclusive malformada (ex.: [POL-008#sXX])
 CITE_RE = re.compile(r"\[([A-Z]+-[A-Za-z0-9-]+#[A-Za-z0-9]+)\]")
+# Versão sem colchetes, para texto livre (proposta), onde o modelo às vezes usa parênteses.
+CITE_LOOSE_RE = re.compile(r"\b([A-Z]+-\d+[A-Za-z0-9-]*#[A-Za-z0-9]+)\b")
 NUM_RE = re.compile(r"\d+(?:[.,]\d+)?")
 
 
@@ -126,3 +128,14 @@ def validate_answer(answer: str, hits: list[PolicyHit],
 def strip_bad_citations(answer: str, valid: set[str]) -> str:
     return CITE_RE.sub(lambda m: m.group(0) if m.group(1) in valid else "[citação removida]",
                        answer)
+
+
+def validate_free_text(text: str, valid: set[str]) -> tuple[str, list[str]]:
+    """Para texto livre (ex.: proposta): remove IDs de chunk fora do contexto, com ou sem
+    colchetes. Retorna (texto limpo, IDs removidos)."""
+    bad = sorted({c for c in CITE_LOOSE_RE.findall(text) if c not in valid})
+    if not bad:
+        return text, []
+    cleaned = CITE_LOOSE_RE.sub(lambda m: m.group(0) if m.group(1) in valid else "citação removida",
+                                text)
+    return cleaned, bad

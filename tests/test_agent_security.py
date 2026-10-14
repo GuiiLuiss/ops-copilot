@@ -74,6 +74,26 @@ def test_llm_proposal_cannot_reference_unknown_evidence(settings, retriever, syn
     assert "POL-007#s00" not in final["proposal"].evidence_refs
     assert "metric:period_comparison" in final["proposal"].evidence_refs
 
+def test_llm_proposal_text_citations_validated(settings, retriever, synthetic_db):
+    # Caso real observado: a proposta citava (POL-003#s02) sem colchetes, e esse chunk não
+    # estava no contexto. O texto da proposta passa pela mesma validação da resposta.
+    fake = FakeLLM('{"title": "Investigar RapidoLog", '
+                   '"description": "A taxa subiu 0,57 p.p. (POL-003#s02) e [POL-999#s01]; '
+                   'ver [POL-001#s03].", "owner_role": "logistica", "priority": "alta", '
+                   '"evidence_refs": ["metric:period_comparison"]}')
+    final, trace = _run(MAIN_Q, "ana.analista", want_proposal=True, provider=fake,
+                        settings=settings, retriever=retriever, synthetic_db=synthetic_db)
+    assert "POL-001#s03" in {h.chunk_id for h in final["policy_hits"]}  # premissa do teste
+    desc = final["proposal"].description
+    assert "POL-003#s02" not in desc and "POL-999#s01" not in desc
+    assert "[POL-001#s03]" in desc  # recuperado: permanece
+    assert "citação removida" in desc
+    assert any("inexistente na proposta" in lim for lim in final["limitations"])
+    step = next(s for s in trace.steps if s.name == "llm:proposal")
+    assert step.meta["bad_citations"] == ["POL-003#s02", "POL-999#s01"]
+
+
+
 
 def test_planner_allowlist_and_policy_first():
     intent, steps = planner.plan(MAIN_Q)

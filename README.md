@@ -292,6 +292,9 @@ em [docs/production.md](docs/production.md).
 - Reranking local: sem ganho claro da busca vetorial, ainda não se justificou.
 - Citações inventadas: caíram de 12 para 2, mas não zeraram. Próximos candidatos são citação
   por índice numérico ou um modelo maior.
+- Números fora do gabarito: os testes conferem só os números que cada caso define. Uma
+  leitura manual encontrou um valor secundário atribuído à transportadora errada; conferir
+  todos os números da resposta contra as tabelas é o próximo passo da avaliação.
 - MCP, PDF/OCR, autenticação real, execução com Gemini.
 
 ## 💰 Custos

@@ -12,6 +12,7 @@ from copiloto.agents.render import (
     deterministic_answer,
     strip_bad_citations,
     validate_answer,
+    validate_free_text,
 )
 from copiloto.agents.runtime import MAX_CONTEXT_CHARS, AgentRuntime
 from copiloto.agents.state import AgentState, Citation
@@ -89,6 +90,7 @@ def node_propose(rt: AgentRuntime):
         known = {h.chunk_id for h in state.get("policy_hits", [])} | {
             f"metric:{d.metric}" for d in state.get("data_results", [])}
         proposal: ProposalContent | None = None
+        bad: set[str] = set()
         if rt.provider is not None:
             ctx = build_context(state.get("data_results", []), state.get("policy_hits", []))
             user_msg = f"Pergunta: {state['question']}\n\n{ctx[:MAX_CONTEXT_CHARS]}"
@@ -97,6 +99,13 @@ def node_propose(rt: AgentRuntime):
                     resp = rt.llm(SYSTEM_PROPOSAL, user_msg, json_mode=True)
                     raw = json.loads(resp.text)
                     raw["evidence_refs"] = [r for r in raw.get("evidence_refs", []) if r in known]
+                    # O texto da proposta passa pela mesma validação de citações da resposta:
+                    # IDs fora do contexto são removidos e registrados, nunca exibidos.
+                    for field in ("title", "description"):
+                        raw[field], removed = validate_free_text(str(raw.get(field, "")), known)
+                        bad.update(removed)
+                    if bad:
+                        rec.meta["bad_citations"] = sorted(bad)
                     proposal = ProposalContent(**ProposeTaskInput(**raw).model_dump())
                 except (ProviderError, json.JSONDecodeError, ValidationError, TypeError) as e:
                     rec.meta["fallback"] = type(e).__name__
@@ -106,5 +115,8 @@ def node_propose(rt: AgentRuntime):
         if proposal is None:
             return {"proposal": None, "limitations": state.get("limitations", []) + [
                 "Sem evidência comparativa suficiente para propor uma tarefa."]}
-        return {"proposal": proposal, "status": "awaiting_approval"}
+        lims = list(state.get("limitations", []))
+        if bad:
+            lims.append("citação inexistente na proposta (removida): " + ", ".join(sorted(bad)))
+        return {"proposal": proposal, "status": "awaiting_approval", "limitations": lims}
     return run

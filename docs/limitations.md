@@ -65,6 +65,12 @@ Após a iteração v1.3 → v1.4 (ver `evaluation.md`):
   ocasionalmente (de 12 para 2 em 66 execuções), mesmo com a lista explícita de citações
   permitidas. A validação remove, mas a afirmação fica sem referência. Próximas opções:
   citação por índice numérico, modelo maior, ou uma segunda passagem de reparo (limitada a 1).
+- **Números fora do gabarito podem estar errados.** Os checks conferem só os números que o
+  caso define como esperados. Em uma execução do cenário principal, o Qwen acertou todos os
+  números do gabarito e ainda assim atribuiu à RapidoLog um desempenho de entrega que era de
+  outra transportadora, e completou com um valor (80,0%) que não existia no contexto. Próximo
+  passo: extrair todos os valores numéricos da resposta e conferir cada um contra as tabelas
+  recebidas, marcando como falha qualquer número sem origem.
 - **Omissão** de rótulos presentes no contexto ocorre esporadicamente (1 em 66 com o Qwen).
   Com o `mistral:7b` a omissão é o erro dominante: 4 em 66, incluindo uma taxa que a pergunta
   pedia e o nome da transportadora. Em compensação, o Mistral não inventou nenhuma citação.
