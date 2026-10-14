@@ -112,6 +112,13 @@ def deterministic_answer(data: list[QueryOperationsOutput],
     return "\n".join(out)
 
 
+# Expressões que afirmam causa a partir de correlação. Detectadas após a geração: a resposta
+# é mantida, mas o leitor vê o aviso em "O que ainda precisa ser confirmado".
+CAUSAL_RE = re.compile(
+    r"\b(causou|causad[oa]s?|a causa (é|foi)|por causa d[eao]|devido a|impulsionad[oa]s?|"
+    r"puxad[oa]s? por|provocad[oa]s? por|em (decorrência|função) d[eao])\b", re.IGNORECASE)
+
+
 def validate_answer(answer: str, hits: list[PolicyHit],
                     data: list[QueryOperationsOutput]) -> tuple[list[str], list[str]]:
     """Retorna (citações válidas, problemas). Citações desconhecidas são problema."""
@@ -122,6 +129,10 @@ def validate_answer(answer: str, hits: list[PolicyHit],
     valid = [c for c in dict.fromkeys(cited) if c in known]
     if hits and data and not cited:
         problems.append("resposta sem citações apesar de haver documentos recuperados")
+    causal = sorted({m.group(0).lower() for m in CAUSAL_RE.finditer(answer)})
+    if causal:
+        problems.append("A resposta usa linguagem de causa (" + ", ".join(causal) + ") onde os "
+                        "dados mostram só associação. Leia como hipótese, não como conclusão.")
     return valid, problems
 
 

@@ -19,19 +19,28 @@ def at(monkeypatch, tmp_path, synthetic_db):
     return t
 
 
-def test_ui_loads_with_demo_warning(at):
-    assert any("não é autenticação" in w.value for w in at.warning)
-    assert any("determinístico" in m.value for m in at.markdown)
+def test_ui_loads_with_demo_notice(at):
+    captions = " ".join(c.value for c in at.caption)
+    assert "Demonstração com dados fictícios" in captions
+    assert "não é um login" in captions
+    assert "setembro de 2025" in " ".join(m.value for m in at.markdown)
 
 
 def test_ui_main_flow_and_approval_gate(at):
-    at.button(key="ex0").click().run()  # primeiro exemplo = pergunta principal
-    assert "cancelamentos" in at.text_input(key="question_input").value
+    at.button(key="ex0").click().run()  # primeira sugestão: cancelamentos no mês
+    assert "cancelamentos" in at.text_area(key="question_input").value
     at.button(key="ask_btn").click().run()
     assert not at.exception, [str(e)[:300] for e in at.exception]
     text = " ".join(m.value for m in at.markdown)
-    assert "Modo determinístico" in text
-    assert "awaiting_approval" in text
-    assert any("Proposta de ação" in s.value for s in at.subheader)
-    # analista: botão Aprovar desabilitado e aviso exibido
-    assert any("Somente o papel" in i.value for i in at.info)
+    assert "Resposta" in text and "Ação sugerida" in text
+    assert any("Aguardando aprovação" in c.value for c in at.caption)
+    assert any("Taxa de cancelamento" in m.label for m in at.metric)
+    # analista: sem botão Aprovar, com aviso de perfil
+    assert any("perfil de gestor" in i.value for i in at.info)
+    assert not [b for b in at.button if b.label == "Aprovar proposta"]
+
+
+def test_ui_out_of_scope_question(at):
+    at.text_area(key="question_input").set_value("Qual a previsão do tempo amanhã?").run()
+    at.button(key="ask_btn").click().run()
+    assert any("suficientes para responder" in i.value for i in at.info)

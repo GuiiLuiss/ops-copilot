@@ -68,11 +68,16 @@ def plan(question: str, reference_month: str = REFERENCE_MONTH) -> tuple[str, li
     wants_data = bool(re.search(
         r"cancelament|pedido|volume|taxa|entrega|atraso|chamado|ticket|transportadora|"
         r"segmento|canal|comparar|aumentou|caiu|quantos|quanto|numero|percentual|desempenho", q))
+    # Pergunta explicitamente sobre o texto de uma política ("o que a política diz sobre...",
+    # "qual a regra de..."): só busca documentos, sem consultar dados.
+    policy_only = bool(re.search(
+        r"^(o que|qual|quais|como) (a |as |e a |e o )?(politica|regra|norma|procedimento)", q))
     wants_policy = bool(re.search(
         r"politica|regra|reembolso|sla|prazo|procedimento|escalon|pode|permitido|vigente|"
         r"contrato|multa|penalidade|troca|devolucao|acao|acoes|o que fazer|como", q))
     comparison = bool(re.search(r"aumentou|caiu|comparad|em relacao|versus|vs|mes anterior|"
-                                r"por que|porque|subiu|variacao|tendencia", q))
+                                r"por que|porque|subiu|variacao|tendencia|mudou|mudaram|"
+                                r"evolu|cresceu|diminuiu", q))
     is_cancel = "cancel" in q
     is_delivery = bool(re.search(r"entrega|atraso|prazo|transportadora|sla", q))
     is_ticket = bool(re.search(r"chamado|ticket|atendimento", q))
@@ -83,6 +88,9 @@ def plan(question: str, reference_month: str = REFERENCE_MONTH) -> tuple[str, li
     if historical_policy:
         return "politicas", [{"tool": "search_policies", "args": {
             "query": question, "reference_date": f"{month}-15"}}]
+
+    if policy_only:
+        return "politicas", [{"tool": "search_policies", "args": {"query": question}}]
 
     steps: list[ToolPlan] = []
     if wants_data:

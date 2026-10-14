@@ -25,8 +25,8 @@ def node_answer(rt: AgentRuntime):
         data, hits = state.get("data_results", []), state.get("policy_hits", [])
         lims = list(state.get("limitations", []))
         if state.get("injection_flags"):
-            lims.append("Instruções suspeitas detectadas na entrada ou em documentos; "
-                        "foram ignoradas.")
+            lims.append("A pergunta ou um documento continha instruções suspeitas, que foram "
+                        "ignoradas.")
         citations: list[Citation] = [
             {"chunk_id": h.chunk_id, "doc_id": h.doc_id, "title": h.title,
              "section": h.section, "text": h.text, "source": h.source} for h in hits]
@@ -40,14 +40,16 @@ def node_answer(rt: AgentRuntime):
         ctx = build_context(data, hits)
         if len(ctx) > MAX_CONTEXT_CHARS:
             ctx = ctx[:MAX_CONTEXT_CHARS] + "\n[contexto truncado]"
-            lims.append("Contexto truncado por limite de tamanho.")
+            lims.append("Parte das evidências foi cortada por limite de tamanho; a resposta "
+                        "pode estar incompleta.")
         user_msg = (f"Pergunta: {state['question']}\nMês de referência: "
                     f"{state['reference_month']}\n\n{ctx}")
         with rt.tracer.step("llm:answer") as rec:
             try:
                 resp = rt.llm(SYSTEM_ANSWER, user_msg, json_mode=False)
             except ProviderError as e:
-                lims.append(f"LLM indisponível ({e}); resposta em modo determinístico.")
+                lims.append(f"O modelo de IA não respondeu ({e}). A resposta foi montada só "
+                            "com os dados, sem texto redigido por IA.")
                 return {"answer": deterministic_answer(data, hits, lims),
                         "citations": citations, "limitations": lims, "status": "answer_ready"}
             rec.meta["latency_ms"] = resp.latency_ms
@@ -61,6 +63,22 @@ def node_answer(rt: AgentRuntime):
     return run
 
 
+_MONTHS_PT = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto",
+              "setembro", "outubro", "novembro", "dezembro"]
+
+
+def _month_pt(ym: str) -> str:
+    try:
+        y, m = ym.split("-")
+        return f"{_MONTHS_PT[int(m) - 1]} de {y}"
+    except (ValueError, IndexError):
+        return ym
+
+
+def _pct(x: float) -> str:
+    return f"{x * 100:.1f}%".replace(".", ",")
+
+
 def fallback_proposal(state: AgentState) -> ProposalContent | None:
     """Proposta determinística a partir da comparação por transportadora."""
     comp = next((d for d in state.get("data_results", [])
@@ -70,13 +88,16 @@ def fallback_proposal(state: AgentState) -> ProposalContent | None:
         return None
     top = max(comp.rows, key=lambda r: r["variacao_pp"])
     refs = [f"metric:{comp.metric}"] + [h.chunk_id for h in state.get("policy_hits", [])[:3]]
+    cur, prev = _month_pt(comp.month), _month_pt(comp.compare_to or "")
+    delta = f"{top['variacao_pp']:+.2f}".replace(".", ",")
     return ProposalContent(
-        title=f"Investigar cancelamentos com {top['grupo']} em {comp.month}",
+        title=f"Investigar cancelamentos com {top['grupo']} em {cur}",
         description=(
-            f"A taxa de cancelamento com {top['grupo']} foi de {top['taxa_atual'] * 100:.1f}% "
-            f"em {comp.month} contra {top['taxa_anterior'] * 100:.1f}% em {comp.compare_to} "
-            f"({top['variacao_pp']:+.2f} p.p.). Abrir revisão operacional conforme o SLA. "
-            f"Hipótese a investigar: associação com atrasos de entrega."
+            f"A taxa de cancelamento com {top['grupo']} foi de {_pct(top['taxa_atual'])} em "
+            f"{cur}, contra {_pct(top['taxa_anterior'])} em {prev} (diferença de {delta} pontos "
+            f"percentuais). Abrir revisão operacional conforme o acordo de nível de serviço. "
+            f"Os atrasos de entrega aparecem entre os motivos; falta verificar se explicam o "
+            f"aumento."
         ),
         owner_role="logistica", priority="alta", evidence_refs=refs,
     )
@@ -114,9 +135,10 @@ def node_propose(rt: AgentRuntime):
             proposal = fallback_proposal(state)
         if proposal is None:
             return {"proposal": None, "limitations": state.get("limitations", []) + [
-                "Sem evidência comparativa suficiente para propor uma tarefa."]}
+                "Não há comparação entre meses suficiente para sugerir uma ação."]}
         lims = list(state.get("limitations", []))
         if bad:
-            lims.append("citação inexistente na proposta (removida): " + ", ".join(sorted(bad)))
+            lims.append("A sugestão citava uma política que não foi consultada; a referência "
+                        "foi removida (citação inexistente na proposta): " + ", ".join(sorted(bad)))
         return {"proposal": proposal, "status": "awaiting_approval", "limitations": lims}
     return run

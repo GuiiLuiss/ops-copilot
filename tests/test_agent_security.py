@@ -57,6 +57,14 @@ def test_llm_fake_citations_removed(settings, retriever, synthetic_db):
     assert trace.model == "fake/test"
 
 
+def test_llm_causal_language_is_flagged(settings, retriever, synthetic_db):
+    fake = FakeLLM("A alta foi impulsionada por atrasos; isso causou cancelamentos [POL-001#s03].")
+    final, _ = _run(MAIN_Q, "ana.analista", provider=fake, settings=settings,
+                    retriever=retriever, synthetic_db=synthetic_db)
+    assert any("linguagem de causa" in lim and "causou" in lim for lim in final["limitations"])
+    assert "impulsionada" in final["answer"]  # texto mantido; só o aviso é acrescentado
+
+
 def test_llm_invalid_proposal_json_falls_back(settings, retriever, synthetic_db):
     fake = FakeLLM("isso não é json")
     final, trace = _run(MAIN_Q, "ana.analista", want_proposal=True, provider=fake,

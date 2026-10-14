@@ -40,7 +40,7 @@ permite comparar "antes" e "depois" com justiça.
 | Índice | `5ccb0ee294a4` (12 documentos, 50 chunks) |
 | Embeddings | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` |
 | LLM | `ollama/qwen3.5:9b` (principal) e `ollama/mistral:7b` (comparação); temperatura 0.1, `think=false`, `num_ctx=8192` |
-| Prompt | `v1.3` (primeira rodada) → `v1.4` (reavaliação e Mistral) → `v1.5` (validação na proposta; sem nova rodada completa) |
+| Prompt | `v1.3` (primeira rodada) → `v1.4` (reavaliação e Mistral) → `v1.5` (validação na proposta) → `v1.6` (estrutura de resposta para leigos, aviso de linguagem causal; sem nova rodada completa com LLM) |
 | Repetições | 1 por variante (sem intervalo de confiança) |
 | Cache | nenhum cache de respostas; embeddings cacheados em `.npz` após a 1ª carga |
 | Top-k | 5 (pool de 20 antes do filtro de autorização); RRF k=60 |
@@ -301,6 +301,16 @@ O que mudou (prompt v1.5):
   removida", registrados no rastreio (`bad_citations`) e listados nas limitações. Teste
   `test_llm_proposal_text_citations_validated` reproduz o caso.
 - O prompt da proposta passou a distinguir "segmento" de "motivo".
+- (v1.6) A resposta passou a ter a estrutura "Resposta principal / O que os dados mostram /
+  O que a política diz / Próximo passo sugerido / O que ainda precisa ser confirmado", e a
+  validação passou a sinalizar linguagem de causa ("causou", "impulsionado por", "devido a")
+  como item a confirmar, sem alterar o texto. A avaliação determinística continuou 33/33 após
+  a mudança; a rodada completa com LLM não foi repetida para v1.6.
+- Dois números que aparecem juntos e confundem: **44** é o total de pedidos cancelados com
+  motivo "atraso na entrega" em setembro (46,3% dos 95 cancelamentos); **188** é o total de
+  chamados de atendimento com assunto "atraso na entrega" no mesmo mês (de 243 chamados).
+  São recortes diferentes: um conta pedidos, o outro conta contatos de clientes, e um pedido
+  pode gerar mais de um chamado. A interface agora rotula cada um com seu denominador.
 - O erro de número secundário **não tem correção estrutural** nesta versão. O modelo tem
   acesso a todos os números corretos e ainda assim confundiu linhas. Ampliar o gabarito para
   todos os números da resposta exigiria extrair e conferir cada valor contra as tabelas, o que

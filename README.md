@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧭 Copiloto de Operações
+# 🧭 Ops Copilot
 
 **Assistente de IA para perguntas sobre a operação de um e-commerce.
 Os números vêm do banco de dados, as fontes podem ser conferidas
@@ -57,34 +57,44 @@ Os números estão em [Resultados medidos](#-resultados-medidos).
 
 ## 🖥️ Como fica na prática
 
-A interface (Streamlit) tem quatro abas: **Chat**, **Propostas e tarefas**, **Avaliação** e **Sobre**.
+A interface (Streamlit) tem quatro abas: **Analisar**, **Ações e tarefas**, **Qualidade das
+respostas** e **Sobre**. A tela de resposta segue sempre a mesma ordem: conclusão, indicadores,
+o que os dados mostram, ação sugerida, fontes e, por último, detalhes técnicos recolhidos.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│  🟡 Estado: awaiting_approval · run a1b2c3 · LLM ollama/qwen3.5:9b   │
+│  Resposta                                                           │
+│  Análise concluída. Resposta redigida por IA (ollama/qwen3.5:9b).   │
 │                                                                     │
-│  **Resumo**                                                         │
-│  A taxa geral subiu 0,57 p.p., puxada pelo segmento assinante       │
-│  (7,9% → 12,3%) e pela transportadora RapidoLog (+4,59 p.p.).       │
-│  O motivo predominante é atraso na entrega (46% dos cancelamentos). │
+│  Taxa de cancelamento   Variação sobre agosto   Principal motivo    │
+│  em setembro de 2025                                                │
+│        8,1%                  +0,57 p.p.         atraso na entrega   │
 │                                                                     │
-│  **Políticas aplicáveis**                                           │
-│  • [POL-002#s02] Reembolso integral quando o cancelamento é por     │
-│    atraso da transportadora                                         │
-│  • [POL-001#s03] Cancelamentos sem motivo exigem revisão semanal    │
+│  ### Resposta principal                                             │
+│  A taxa de cancelamento subiu de 7,5% para 8,1% em setembro. A alta │
+│  se concentra nos clientes assinantes e na transportadora RapidoLog.│
 │                                                                     │
-│  ▸ Fontes (clique para ver o trecho)                                │
-│  ▸ Rastreio: 7 ferramentas · 29 s · 5.262 + 529 tokens              │
-│  ▸ Limitações desta resposta                                        │
+│  ### O que a política diz                                           │
+│  Todo cancelamento deve ter um motivo registrado [POL-001#s03].     │
+│                                                                     │
+│  ### O que ainda precisa ser confirmado                             │
+│  Os atrasos aparecem entre os motivos; falta verificar se explicam  │
+│  o aumento observado.                                               │
+│                                                                     │
+│  ▸ Fontes consultadas    ▸ O que os dados mostram (tabelas)         │
 │ ─────────────────────────────────────────────────────────────────── │
-│  📝 Proposta: Investigar cancelamentos com RapidoLog em 2025-09     │
-│     [ ✅ Aprovar ]  [ ❌ Rejeitar ]   ← só habilitado para gestor    │
+│  Ação sugerida                                                      │
+│  Investigar cancelamentos com RapidoLog em setembro de 2025         │
+│  Situação: Aguardando aprovação. Área: Logística. Prioridade: Alta. │
+│  [ Aprovar proposta ]  [ Rejeitar ]          ← só para gestor       │
+│ ─────────────────────────────────────────────────────────────────── │
+│  ▸ Detalhes técnicos: 7 consultas · 29 s · 5.262 + 529 tokens       │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-Há também um modo sem IA, rotulado como "determinístico": a mesma interface, mas a
-resposta é montada só com os números e trechos encontrados. Serve para explorar os dados sem
-nenhum modelo e responde em milissegundos.
+Com a IA desligada (opção em "Configurações avançadas"), a mesma tela mostra os
+indicadores, os achados montados por regras e os trechos de política, sem texto redigido.
+Responde em milissegundos e não precisa de modelo nenhum.
 
 ## 🚀 Como rodar
 
@@ -100,7 +110,8 @@ copiloto generate-data              # cria os dados fictícios (sempre iguais, s
 copiloto ui                         # abre a interface no navegador
 ```
 
-Com isso já é possível fazer perguntas no modo determinístico, sem modelo de IA.
+Com isso já é possível fazer perguntas sem modelo de IA: a resposta é montada só com os
+dados e os trechos de política encontrados.
 
 <details>
 <summary><b>➕ Ligar a IA (Ollama, local e gratuito)</b></summary>
@@ -108,7 +119,7 @@ Com isso já é possível fazer perguntas no modo determinístico, sem modelo de
 ```bash
 ollama pull qwen3.5:9b              # baixa o modelo (~6 GB)
 copy .env.example .env              # e edite: COPILOTO_LLM_PROVIDER=ollama
-copiloto ui                         # o botão "Usar LLM" aparece ligado
+copiloto ui                         # "Usar IA para elaborar a resposta" aparece ligado
 ```
 
 Avaliado com `qwen3.5:9b` e `mistral:7b` em uma RTX 4070 Laptop (32 GB RAM): 12 a 15 s por

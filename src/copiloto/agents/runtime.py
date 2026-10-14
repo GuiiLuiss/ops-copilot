@@ -66,8 +66,9 @@ def node_plan(rt: AgentRuntime):
             rec.meta["n_tools"] = len(steps)
             if not steps:
                 return {"intent": intent, "plan": [], "status": "insufficient",
-                        "limitations": [("A pergunta não corresponde a nenhuma consulta ou "
-                                         "política disponível (fora de escopo).")]}
+                        "limitations": [("A pergunta está fora do que este assistente consegue "
+                                         "responder. Ele cobre pedidos, cancelamentos, entregas, "
+                                         "chamados e políticas internas.")]}
             return {"intent": intent, "plan": steps, "status": "retrieving"}
     return run
 
@@ -85,8 +86,8 @@ def node_tools(rt: AgentRuntime):
                         out = query_operations(QueryOperationsInput(**args), rt.db_path)
                         data.append(out)
                         if not out.data_sufficient:
-                            lims.append(f"{out.metric} ({out.month}): "
-                                        f"{out.note or 'dados insuficientes'}")
+                            lims.append(f"Dados insuficientes para {out.metric} em {out.month}: "
+                                        f"{out.note or 'amostra pequena ou vazia'}.")
                     elif tool == "search_policies":
                         out = search_policies(SearchPoliciesInput(**args), rt.user,
                                               rt.retriever, mode=rt.retrieval_mode)
@@ -95,11 +96,12 @@ def node_tools(rt: AgentRuntime):
                         rec.meta["hits"] = [h.chunk_id for h in out.hits]
                         rec.meta["filtered_out"] = out.filtered_out_count
                         if not out.hits:
-                            lims.append("Nenhuma política relevante encontrada para a pergunta.")
+                            lims.append("Nenhuma política interna foi encontrada para essa "
+                                        "pergunta.")
                     else:
                         raise ValueError(f"ferramenta não permitida: {tool}")
                 except (ValidationError, ValueError) as e:
-                    lims.append(f"Falha na ferramenta {tool}: {e}")
+                    lims.append(f"Uma consulta não pôde ser executada ({tool}): {e}.")
         # Quarentena: chunks com padrões de injeção NÃO entram no contexto nem nas citações.
         # Ficam apenas registrados no rastreio e nas limitações.
         flags = list(state.get("injection_flags", []))
@@ -108,12 +110,12 @@ def node_tools(rt: AgentRuntime):
             ids = [h.chunk_id for h in quarantined]
             flags.extend(f"doc:{cid}" for cid in ids)
             hits = [h for h in hits if h.chunk_id not in set(ids)]
-            lims.append(f"{len(ids)} trecho(s) recuperado(s) com instruções suspeitas foram "
-                        f"excluídos do contexto: {', '.join(ids)}.")
+            lims.append(f"{len(ids)} trecho(s) de documento com instruções suspeitas foram "
+                        f"excluídos do contexto por segurança: {', '.join(ids)}.")
             rt.tracer.trace.steps[-1].meta["quarantined"] = ids
         status = "answer_ready" if (data or hits) else "insufficient"
         if status == "insufficient":
-            lims.append("Nenhuma evidência obtida das ferramentas.")
+            lims.append("Nenhum dado ou política foi encontrado para essa pergunta.")
         return {"data_results": data, "policy_hits": hits, "limitations": lims,
                 "injection_flags": flags, "retrieval_mode": mode or "n/a", "status": status}
     return run
