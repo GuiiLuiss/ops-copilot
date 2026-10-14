@@ -33,7 +33,7 @@ def test_ui_main_flow_and_approval_gate(at):
     assert not at.exception, [str(e)[:300] for e in at.exception]
     text = " ".join(m.value for m in at.markdown)
     assert "Resposta" in text and "Ação sugerida" in text
-    assert any("Aguardando aprovação" in c.value for c in at.caption)
+    assert "Situação: Aguardando aprovação" in text
     assert any("Taxa de cancelamento" in m.label for m in at.metric)
     # analista: sem botão Aprovar, com aviso de perfil
     assert any("perfil de gestor" in i.value for i in at.info)
@@ -44,3 +44,19 @@ def test_ui_out_of_scope_question(at):
     at.text_area(key="question_input").set_value("Qual a previsão do tempo amanhã?").run()
     at.button(key="ask_btn").click().run()
     assert any("suficientes para responder" in i.value for i in at.info)
+
+
+def test_ui_manager_approves_from_actions_tab(at):
+    # analista gera a proposta
+    at.button(key="ex0").click().run()
+    at.button(key="ask_btn").click().run()
+    pid = at.session_state["last"]["proposal_row"]["proposal_id"]
+    # gestor abre a aba de ações: a proposta aparece na fila com os controles
+    at.sidebar.selectbox[0].set_value("gui.gestor").run()
+    assert [b for b in at.button if b.key == f"h_ap_{pid}"], "botão Aprovar na fila"
+    at.button(key=f"h_ap_{pid}").click().run()
+    assert any("Falta criar a tarefa" in s.value for s in at.success)
+    at.button(key=f"h_ex_{pid}").click().run()
+    text = " ".join(m.value for m in at.markdown)
+    assert "Concluída, tarefa criada" in text
+    assert not at.exception

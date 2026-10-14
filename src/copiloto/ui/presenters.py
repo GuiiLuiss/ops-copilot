@@ -25,10 +25,17 @@ ANALYSIS_STATE = {
 
 PROPOSAL_STATE = {
     "awaiting_approval": "Aguardando aprovação",
-    "approved": "Aprovada, tarefa ainda não criada",
+    "approved": "Aprovada, aguardando criação da tarefa",
     "rejected": "Rejeitada",
-    "executed": "Tarefa criada",
-    "expired": "Expirada",
+    "executed": "Concluída, tarefa criada",
+    "expired": "Expirada sem decisão",
+}
+PROPOSAL_STATE_HELP = {
+    "awaiting_approval": "Um gestor precisa aprovar ou rejeitar. Qualquer perfil pode editar.",
+    "approved": "Já aprovada no texto exato exibido. Falta um gestor clicar em Criar tarefa.",
+    "rejected": "Nenhuma tarefa foi criada. Faça uma nova análise se quiser outra sugestão.",
+    "executed": "A tarefa está registrada. Não pode mais ser editada.",
+    "expired": "O prazo de aprovação passou. Faça uma nova análise para gerar outra proposta.",
 }
 
 METRIC_LABEL = {

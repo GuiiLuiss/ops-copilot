@@ -6,6 +6,7 @@ import json
 
 from pydantic import ValidationError
 
+from copiloto.agents.labels import humanize_refs
 from copiloto.agents.prompts import SYSTEM_ANSWER, SYSTEM_PROPOSAL
 from copiloto.agents.render import (
     build_context,
@@ -122,9 +123,14 @@ def node_propose(rt: AgentRuntime):
                     raw["evidence_refs"] = [r for r in raw.get("evidence_refs", []) if r in known]
                     # O texto da proposta passa pela mesma validação de citações da resposta:
                     # IDs fora do contexto são removidos e registrados, nunca exibidos.
+                    by_id = {h.chunk_id: f"{h.title}, {h.section}"
+                             for h in state.get("policy_hits", [])}
                     for field in ("title", "description"):
-                        raw[field], removed = validate_free_text(str(raw.get(field, "")), known)
+                        text, removed = validate_free_text(str(raw.get(field, "")), known)
                         bad.update(removed)
+                        # Identificadores válidos que sobraram no texto viram nomes legíveis;
+                        # os IDs continuam só em evidence_refs.
+                        raw[field] = humanize_refs(text, by_id)
                     if bad:
                         rec.meta["bad_citations"] = sorted(bad)
                     proposal = ProposalContent(**ProposeTaskInput(**raw).model_dump())

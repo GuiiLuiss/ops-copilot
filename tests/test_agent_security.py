@@ -57,6 +57,20 @@ def test_llm_fake_citations_removed(settings, retriever, synthetic_db):
     assert trace.model == "fake/test"
 
 
+def test_humanize_refs_replaces_technical_ids():
+    from copiloto.agents.labels import humanize_refs
+    text = ("Subiu 0,57 p.p. (metric:period_comparison). Atraso responde a 46,3% "
+            "(evidência cancellation_breakdown#s01) e gera chamados no ticket_volume. "
+            "Ver [POL-002#s02] e POL-999#s09.")
+    out = humanize_refs(text, {"POL-002#s02": "Política de Reembolso, 2. Valor"})
+    assert "metric:" not in out and "#s" not in out and "[" not in out
+    assert "ticket_volume" not in out and "cancellation_breakdown" not in out
+    assert "(comparação mensal de cancelamentos)" in out
+    assert "(motivos de cancelamento)" in out
+    assert "(Política de Reembolso, 2. Valor)" in out
+    assert "gera chamados no." in out  # ID solto removido; pontuação preservada
+
+
 def test_llm_causal_language_is_flagged(settings, retriever, synthetic_db):
     fake = FakeLLM("A alta foi impulsionada por atrasos; isso causou cancelamentos [POL-001#s03].")
     final, _ = _run(MAIN_Q, "ana.analista", provider=fake, settings=settings,
@@ -94,7 +108,8 @@ def test_llm_proposal_text_citations_validated(settings, retriever, synthetic_db
     assert "POL-001#s03" in {h.chunk_id for h in final["policy_hits"]}  # premissa do teste
     desc = final["proposal"].description
     assert "POL-003#s02" not in desc and "POL-999#s01" not in desc
-    assert "[POL-001#s03]" in desc  # recuperado: permanece
+    assert "POL-001#s03" not in desc  # válido, mas o texto mostra o nome, não o ID
+    assert "Política de Cancelamento" in desc
     assert "citação removida" in desc
     assert any("inexistente na proposta" in lim for lim in final["limitations"])
     step = next(s for s in trace.steps if s.name == "llm:proposal")

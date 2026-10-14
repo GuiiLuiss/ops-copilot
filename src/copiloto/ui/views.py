@@ -10,6 +10,7 @@ import streamlit as st
 from copiloto import approval
 from copiloto.auth import User
 from copiloto.config import PROJECT_ROOT
+from copiloto.retrieval.retriever import get_retriever
 from copiloto.tools.contracts import ProposalContent
 from copiloto.ui import presenters as pr
 
@@ -116,31 +117,53 @@ def render_answer(final: dict, trace, *, used_llm: bool = False) -> None:
 
 
 
-def render_proposal(proposal_id: str, user: User, *, citations: list[dict] | None = None) -> None:
+def _evidence_labels(refs: list[str], citations: list[dict] | None) -> list[str]:
+    """Rótulos legíveis das evidências, resolvidos pelo índice de documentos (não depende
+    da sessão) e, como alternativa, pelas citações da resposta atual."""
+    by_id = get_retriever().by_id
+    out = []
+    for ref in refs:
+        if ref.startswith("metric:"):
+            out.append(pr.METRIC_LABEL.get(ref[7:], ref[7:]))
+        elif ref in by_id:
+            c = by_id[ref]
+            out.append(f"{c.title}: {c.section}")
+        else:
+            out.append(pr.evidence_label(ref, citations or []))
+    return out
+
+
+def render_proposal(proposal_id: str, user: User, *, citations: list[dict] | None = None,
+                    heading: str = "## Ação sugerida", key_prefix: str = "a") -> None:
     p = approval.get_proposal(proposal_id)
     if p is None:
         return
     content = json.loads(p["content_json"])
     state = p["state"]
-    st.markdown("## Ação sugerida")
+    if heading:
+        st.markdown(heading)
     st.markdown(f"**{content['title']}**")
-    st.caption(f"Situação: {pr.PROPOSAL_STATE.get(state, state)}. "
-               f"Área responsável: {pr.OWNER_LABEL.get(content['owner_role'], content['owner_role'])}. "
-               f"Prioridade: {pr.PRIORITY_LABEL.get(content['priority'], content['priority'])}."
+    st.markdown(f"**Situação: {pr.PROPOSAL_STATE.get(state, state)}**",
+                help=pr.PROPOSAL_STATE_HELP.get(state))
+    st.caption(f"Área responsável: {pr.OWNER_LABEL.get(content['owner_role'], content['owner_role'])}. "
+               f"Prioridade: {pr.PRIORITY_LABEL.get(content['priority'], content['priority'])}. "
+               f"Criada em {pr.local_datetime(p['created_at'])} por {p['created_by']}."
                + (f" Válida até {pr.local_datetime(p['expires_at'])}."
-                  if state == "awaiting_approval" else ""))
+                  if state == "awaiting_approval" else "")
+               + (f" Decidida por {p['decided_by']} em {pr.local_datetime(p['decided_at'])}."
+                  if p.get("decided_by") else ""))
     st.markdown(content["description"])
     if content.get("evidence_refs"):
         with st.expander("Evidências que sustentam a sugestão"):
-            for ref in content["evidence_refs"]:
-                st.markdown(f"- {pr.evidence_label(ref, citations or [])}")
+            for label in _evidence_labels(content["evidence_refs"], citations):
+                st.markdown(f"- {label}")
 
     if state == "awaiting_approval":
-        _proposal_controls(proposal_id, p, content, user)
+        _proposal_controls(proposal_id, p, content, user, key_prefix)
     elif state == "approved":
         st.success("Proposta aprovada. Falta criar a tarefa.")
         if user.can_approve:
-            if st.button("Criar tarefa", type="primary", key=f"ex_{proposal_id}"):
+            if st.button("Criar tarefa", type="primary", key=f"{key_prefix}_ex_{proposal_id}"):
                 _execute(proposal_id, user)
         else:
             st.caption("A criação da tarefa precisa de uma pessoa com perfil de gestor.")
@@ -152,15 +175,28 @@ def render_proposal(proposal_id: str, user: User, *, citations: list[dict] | Non
         st.info("O prazo de aprovação expirou. Faça uma nova análise para gerar outra proposta.")
 
 
-def _proposal_controls(proposal_id: str, p: dict, content: dict, user: User) -> None:
-    with st.expander("Editar proposta"):
+def _proposal_controls(proposal_id: str, p: dict, content: dict, user: User,
+                       key_prefix: str = "a") -> None:
+    with st.popover("Editar proposta"):
         st.caption("Se você alterar a proposta, ela precisará de uma nova aprovação.")
-        new_title = st.text_input("Título", content["title"], key=f"t_{proposal_id}")
-        new_desc = st.text_area("Descrição", content["description"], key=f"d_{proposal_id}")
-        if st.button("Salvar alterações", key=f"save_{proposal_id}"):
+        new_title = st.text_input("Título", content["title"], key=f"{key_prefix}_t_{proposal_id}")
+        new_desc = st.text_area("Descrição", content["description"], key=f"{key_prefix}_d_{proposal_id}")
+        owners = list(pr.OWNER_LABEL)
+        new_owner = st.selectbox("Área responsável", owners,
+                                 index=owners.index(content["owner_role"])
+                                 if content["owner_role"] in owners else 0,
+                                 format_func=lambda o: pr.OWNER_LABEL[o], key=f"{key_prefix}_o_{proposal_id}")
+        prios = list(pr.PRIORITY_LABEL)
+        new_prio = st.selectbox("Prioridade", prios,
+                                index=prios.index(content["priority"])
+                                if content["priority"] in prios else 1,
+                                format_func=lambda x: pr.PRIORITY_LABEL[x],
+                                key=f"{key_prefix}_p_{proposal_id}")
+        if st.button("Salvar alterações", key=f"{key_prefix}_save_{proposal_id}"):
             try:
                 approval.edit_proposal(proposal_id, ProposalContent(
-                    **{**content, "title": new_title, "description": new_desc}), user)
+                    **{**content, "title": new_title, "description": new_desc,
+                       "owner_role": new_owner, "priority": new_prio}), user)
                 st.rerun()
             except approval.ApprovalError as e:
                 st.error(f"Não foi possível salvar: {e}.")
@@ -169,10 +205,10 @@ def _proposal_controls(proposal_id: str, p: dict, content: dict, user: User) -> 
                 "Troque o perfil na barra lateral para experimentar.")
         return
     c1, c2 = st.columns(2)
-    if c1.button("Aprovar proposta", type="primary", key=f"ap_{proposal_id}",
+    if c1.button("Aprovar proposta", type="primary", key=f"{key_prefix}_ap_{proposal_id}",
                  width="stretch"):
         _decide(proposal_id, user, True, p["content_hash"])
-    if c2.button("Rejeitar", key=f"rj_{proposal_id}", width="stretch"):
+    if c2.button("Rejeitar", key=f"{key_prefix}_rj_{proposal_id}", width="stretch"):
         _decide(proposal_id, user, False, p["content_hash"])
     st.caption("Aprovar autoriza a proposta. A tarefa é criada em uma etapa seguinte.")
 
@@ -217,18 +253,34 @@ def render_technical(final: dict, trace) -> None:
 
 def render_history(user: User) -> None:
     h = approval.list_history()
-    st.markdown("## Propostas")
+    pending = [p for p in h["proposals"] if p["state"] in ("awaiting_approval", "approved")]
+    done = [p for p in h["proposals"] if p["state"] not in ("awaiting_approval", "approved")]
+
+    st.markdown("## Pendentes")
+    if not pending:
+        st.caption("Nenhuma proposta aguardando decisão.")
+    elif user.can_approve:
+        st.caption("Abra uma proposta para aprovar, rejeitar, editar ou criar a tarefa.")
+    else:
+        st.caption("Estas propostas aguardam uma pessoa com perfil de gestor. Você pode abrir "
+                   "cada uma para ler e editar.")
+    for p in pending:
+        label = f"{p['title']} · {pr.PROPOSAL_STATE.get(p['state'], p['state'])}"
+        with st.expander(label, expanded=len(pending) == 1):
+            render_proposal(p["proposal_id"], user, heading="", key_prefix="h")
+
+    st.markdown("## Histórico de propostas")
     st.caption("Sugestões geradas pelas análises e o que aconteceu com cada uma.")
-    if h["proposals"]:
+    if done:
         st.dataframe([{
             "Título": p["title"],
             "Situação": pr.PROPOSAL_STATE.get(p["state"], p["state"]),
             "Criada por": p["created_by"],
             "Decidida por": p["decided_by"] or "",
             "Criada em": pr.local_datetime(p["created_at"]),
-        } for p in h["proposals"]], width="stretch", hide_index=True)
+        } for p in done], width="stretch", hide_index=True)
     else:
-        st.caption("Nenhuma proposta ainda. Faça uma análise com a opção de sugerir uma ação.")
+        st.caption("Nenhuma proposta concluída ainda.")
     st.markdown("## Tarefas criadas")
     if h["tasks"]:
         st.dataframe([{
