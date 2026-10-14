@@ -137,7 +137,8 @@ docker compose up                   # API em :8000 e UI em :8501, modo determin�
 docker compose --profile llm up     # + Ollama como serviço (depois: docker compose exec ollama ollama pull qwen3.5:9b)
 ```
 
-A imagem já sobe com o banco sintético gerado e um healthcheck em `/health`.
+A imagem (~690 MB, sem torch) sobe com o banco sintético já gerado; API e UI têm healthcheck.
+Validado localmente e construído a cada commit no CI.
 </details>
 
 <details>
