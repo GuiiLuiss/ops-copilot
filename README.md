@@ -13,7 +13,7 @@ e nenhuma ação acontece sem aprovação de uma pessoa.**
 [![Avaliação](https://img.shields.io/badge/avalia%C3%A7%C3%A3o-33%20casos-blue)](docs/evaluation.md)
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-lightgrey)](#-licença)
 
-*Projeto pessoal de portfólio · 100% local · dados fictícios · em português*
+*100% local · dados fictícios · em português*
 
 </div>
 
